@@ -328,21 +328,39 @@ body {
 }
 
 
-.bloc-violet {
+/*.bloc-violet {
   width: 600px;
   height: 900px;
-  position: absolute;
   top: 280px;
   left: 18%;
   transform: translateX(-50%);
   background-color: #E3E3FF ;
   border-radius: 5%;
-  display: flex;
+  display: flex;                   ancien code
   flex-direction: column;
   align-items: center;
-  padding-top: 8px;
+  padding: 0 20px;
   z-index: 10;
-  margin: 0 auto;
+  margin: 65px auto 0;
+}*/
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  max-width: 1500px;
+  margin: 65px auto;
+  padding: 0 30px;
+}
+
+.bloc-violet {
+  width: 550px;
+  height: auto;
+  background-color: #E3E3FF;
+  border-radius: 20px;
+  padding: 30px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .bloc-violet h2 {
@@ -363,14 +381,48 @@ body {
 }
 
 
-.form-container {
+/*.form-container {
   width: 1150px;
   height: 800px;
-  background-color: white;
+  background-color: white;          ancien code
   padding: 10px;
   float: right;
   margin-right: 400px;
   margin-top: 65px;
+}*/
+
+.form-container {
+  flex: 1;
+  max-width: 700px;
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive pour tablettes */
+@media (max-width: 900px) {
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .bloc-violet, .form-container {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+/* Responsive pour mobiles */
+@media (max-width: 600px) {
+  .form-control {
+    padding: 20px;
+    font-size: 16px;
+  }
+  
+  .btn-submit {
+    padding: 20px 40px;
+  }
 }
 
 .form-title {
@@ -668,7 +720,7 @@ footer {
 }
 
 
-/* Styles spécifiques pour la page de connexion */
+/* Styles spécifiques pour la page de connexion  en fait connexion c'est accueil*/
 body.connexion-page {
   background-color: #f0f0f5;
   text-align: center;
@@ -758,8 +810,7 @@ body.connexion-page {
   font-size: 22px;
 }
 
-.connexion-page .btn-login,
-.connexion-page .btn-signup {
+.connexion-page .btn-login {
   background-color: white;
   color: #6e5ba3;
   border: none;
@@ -773,36 +824,35 @@ body.connexion-page {
   transition: background-color 0.3s;
 }
 
-.connexion-page .btn-login:hover,
-.connexion-page .btn-signup:hover {
+.connexion-page .btn-login:hover {
   background-color: #f0f0f5;
 }
 
-.connexion-page footer {
+ footer {
   background-color: #6e5ba3;
   color: white;
   padding: 20px 0;
   width: 100%;
 }
 
-.connexion-page .footer-content {
+.footer-content {
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
   padding: 0 20px;
 }
 
-.connexion-page .footer-links {
+.footer-links {
   margin-top: 10px;
 }
 
-.connexion-page .footer-links a {
+.footer-links a {
   color: #ddd;
   margin: 0 15px;
   text-decoration: none;
   transition: color 0.3s;
 }
 
-.connexion-page .footer-links a:hover {
+.footer-links a:hover {
   color: white;
 }
