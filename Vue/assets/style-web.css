@@ -6,6 +6,9 @@
 
 body {
   font-family: "Roboto Light", sans-serif;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .bg-pink {
@@ -441,4 +444,194 @@ input:focus, textarea:focus {
 
 ::placeholder {
   color: #9CA6DB;
+}
+
+body.mentions {
+  text-align: center;
+  background-color: #b4e0f0;
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+body.mentions h1,
+body.mentions p {
+  text-align: center;
+}
+
+body.mentions h1 {
+  margin-bottom: 40px;
+}
+body.mentions h2 {
+    margin-bottom: 3px;
+}
+body.mentions div {
+  margin-bottom: 20px;
+}
+
+body.cmpt {
+  background-color: #f0f0f5;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main.cmpt {
+  background-image: url("assets/backgroundcompte.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0; /* Suppression de la marge supérieure de 40px */
+  flex: 1;
+  padding: 40px 20px; /* Ajout de padding en haut pour l'espace */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-container.cmpt {
+  background-color: #F4F7FF;    /*rgba(255, 255, 255, 0.8)*/
+  padding: 40px; /* Augmentation du padding */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: 90%; /* Augmentation de la largeur de 80% à 90% */
+  max-width: 1000px; /* Augmentation de la largeur maximale de 800px à 1000px */
+}
+
+.left-card.cmpt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 25%; /* Réduction légère pour donner plus d'espace à droite */
+  margin-right: 50px; /* Augmentation de la marge */
+}
+
+.right-card.cmpt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 75%; /* Augmentation de la largeur */
+  color: #5D5897; /* Couleur du texte */
+}
+
+.avatar.cmpt {
+  /*width: 200px;
+  height: 200px;
+  background-color: #ddd;
+  border-radius: 70%;
+  margin-bottom: 20px;*/
+}
+
+.user-info p.cmpt {
+  margin: 5px 0;
+  text-align: left;
+}
+
+
+.row.cmpt {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px; /* Plus d'espace entre les lignes */
+  width: 100%;
+}
+
+.row p.cmpt {
+  margin: 0 20px 0 0; /* Plus d'espace entre les textes */
+  text-align: center;
+  background: #F4F7FF;
+  font-size: 16px; /* Taille de police légèrement plus grande */
+  border: 2px solid #7B8EEE; /* Épaisseur, style et couleur de la bordure */
+  padding: 10px; /* Ajoute un espace intérieur entre le texte et la bordure */
+}
+
+.row button.cmpt {
+  margin-left: auto;
+  padding: 8px 12px; /* Boutons légèrement plus grands */
+}
+
+body.accueil {
+  background-color: #f0f0f5;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+nav ul.accueil {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li.accueil {
+  display: inline;
+}
+
+nav ul li a.accueil {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.banner.accueil {
+  background: url('background.jpg') no-repeat center center/cover;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.login-section.accueil {
+  margin: 40px auto;
+  flex: 1; /* Ajout de flex: 1; */
+}
+
+.login-section h2.accueil {
+  margin-bottom: 20px;
+}
+
+.cards.accueil {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.card.accueil {
+  background-color: #8a90d1;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.card h3.accueil {
+  margin-bottom: 15px;
+  color: white;
+}
+
+button.accueil {
+  background-color: white;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+button:hover.accueil {
+  background-color: #ddd;
 }
