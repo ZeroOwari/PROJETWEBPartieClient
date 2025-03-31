@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P.T.A.S - Connexion</title>
     <link rel="stylesheet" href="assets/style-web.css">
+    <!-- Ajout de Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="accueil">
-
+<body class="accueil connexion-page">
 <header>
     <nav class="navbar">
         <div class="logo">
@@ -20,49 +21,77 @@
                 Services
             </button>
             <div class="dropdown-content">
-                <a href="accueil.html">Accueil</a>
-                <a href="a-propos.html">À propos de nous</a>
-                <a href="avis.html">Avis</a>
-                <a href="recherche.html">Recherche</a>
-                <a href="espace-tuteur.html">Espace Tuteur</a>
-                <a href="mon-compte-etudiant.html">Mon compte Étudiant</a>
-                <a href="mon-compte-tuteur.html">Mon compte Tuteur</a>
+                <a href="accueil.html"><i class="fas fa-home"></i> Accueil</a>
+                <a href="a-propos.html"><i class="fas fa-info-circle"></i> À propos de nous</a>
+                <a href="avis.html"><i class="fas fa-star"></i> Avis</a>
+                <a href="recherche.html"><i class="fas fa-search"></i> Recherche</a>
+                <a href="espace-tuteur.html"><i class="fas fa-chalkboard-teacher"></i> Espace Tuteur</a>
+                <a href="mon-compte-etudiant.html"><i class="fas fa-user-graduate"></i> Mon compte Étudiant</a>
+                <a href="mon-compte-tuteur.html"><i class="fas fa-user-tie"></i> Mon compte Tuteur</a>
             </div>
         </div>
-
+        <h1> P.T.A.S </h1>
         <div class="right-menu">
-            <a href="connexion.html" class="nav-button">Connexion</a>
-            <a href="espace-recruteur.html" class="nav-button">Espace recruteur</a>
+            <a href="connexion.html" class="nav-button active"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+            <a href="espace-recruteur.html" class="nav-button"><i class="fas fa-briefcase"></i> Espace recruteur</a>
         </div>
     </nav>
-</header>
+
+
 <section class="banner">
-    <h1>P.T.A.S</h1>
+    <div class="banner-overlay">
+        <h1>P.T.A.S</h1>
+        <p>Plateforme de Tutorat et d'Accompagnement Scolaire</p>
+    </div>
 </section>
 
+</header>
+
 <section class="login-section">
-    <h2>Connectez-vous</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Étudiant</h3>
-            <button>Se connecter</button>
-            <button>Créez un compte</button>
-        </div>
-        <div class="card">
-            <h3>Recruteur</h3>
-            <button>Se connecter</button>
-            <button>Créez un compte</button>
-        </div>
-        <div class="card">
-            <h3>Tuteur</h3>
-            <button>Se connecter</button>
-            <button>Créez un compte</button>
+    <div class="login-container">
+        <h2>Connectez-vous à votre espace</h2>
+        <p class="subtitle">Choisissez votre profil pour accéder à votre compte</p>
+
+        <div class="cards">
+            <div class="card student">
+                <div class="card-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>Étudiant</h3>
+                <button class="btn-login">Se connecter</button>
+                <button class="btn-signup">Créer un compte</button>
+            </div>
+
+            <div class="card recruiter">
+                <div class="card-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3>Recruteur</h3>
+                <button class="btn-login">Se connecter</button>
+                <button class="btn-signup">Créer un compte</button>
+            </div>
+
+            <div class="card tutor">
+                <div class="card-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3>Tuteur</h3>
+                <button class="btn-login">Se connecter</button>
+                <button class="btn-signup">Créer un compte</button>
+            </div>
         </div>
     </div>
 </section>
 
 <footer>
-    <p> Tous droits réservés 2025 © Politique relative aux cookies, politique de confidentialité et conditions d'utilisation </p>
+    <div class="footer-content">
+        <p>© 2025 P.T.A.S - Tous droits réservés</p>
+        <div class="footer-links">
+            <a href="#">Politique relative aux cookies</a>
+            <a href="#">Politique de confidentialité</a>
+            <a href="#">Conditions d'utilisation</a>
+        </div>
+    </div>
 </footer>
 
 </body>
