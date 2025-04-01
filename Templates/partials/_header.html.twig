@@ -1,0 +1,40 @@
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{{ asset('logo.png') }}" alt="Logo {{ site_name }}">
+        </div>
+
+        <div class="services-dropdown">
+            <button class="hamburger-menu">
+                <span class="hamburger-icon"></span>
+                Services
+            </button>
+            <div class="dropdown-content">
+                {% for item in [
+                    {'path': 'accueil', 'icon': 'home', 'text': 'Accueil'},
+                    {'path': 'a-propos', 'icon': 'info-circle', 'text': 'À propos'},
+                    {'path': 'avis', 'icon': 'star', 'text': 'Avis'},
+                    {'path': 'recherche', 'icon': 'search', 'text': 'Recherche'},
+                    {'path': 'espace-tuteur', 'icon': 'chalkboard-teacher', 'text': 'Espace Tuteur'}
+                ] %}
+                    <a href="?page={{ item.path }}" class="{{ current_page == item.path ? 'active' }}">
+                        <i class="fas fa-{{ item.icon }}"></i> {{ item.text }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <h1>{{ site_name }}</h1>
+
+        <div class="right-menu">
+            <a href="?page=connexion-etu" class="nav-button {{ current_page == 'connexion-etu' ? 'active' }}">
+                <i class="fas fa-sign-in-alt"></i> Connexion
+            </a>
+            <a href="?page=connexion-recruteur" class="nav-button {{ current_page == 'connexion-recruteur' ? 'active' }}">
+                <i class="fas fa-briefcase"></i> Espace recruteur
+            </a>
+        </div>
+    </nav>
+
+    {% block banner %}{% endblock %}
+</header>
