@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web4ALL Navigation</title>
   <link rel="stylesheet" href="assets/style-web.css">
+  <script src="../controler/inscription.js"></script>
 </head>
 <body class="body bg-white">
 <header>
@@ -19,7 +20,7 @@
         Services
       </button>
       <div class="dropdown-content">
-        <a href="accueil.html">Accueil</a>
+        <a href="choix-profil.html">Accueil</a>
         <a href="a-propos.html">À propos de nous</a>
         <a href="avis.html">Avis</a>
         <a href="recherche.html">Recherche</a>
@@ -47,8 +48,8 @@
       <input type="email" id="email" placeholder="Entrez votre adresse email">
     </div>
     <div class="champ-formulaire champ-formulaire-blue champ-formulaire-inscription">
-      <label for="Nom">Nom</label>
-      <input type="Nom" id="Nom" placeholder="Entrez votre nom">
+      <label for="name">Nom</label>
+      <input type="nom" id="name" placeholder="Entrez votre nom">
     </div>
     <div class="champ-formulaire champ-formulaire-blue champ-formulaire-inscription">
       <label for="Date">Date de naissance</label>
@@ -56,18 +57,24 @@
     </div>
     <div class="champ-formulaire champ-formulaire-blue champ-formulaire-inscription">
       <label for="password">Mot de passe</label>
-      <input type="password" id="password" placeholder="Tapez votre mode passe">
+      <div style="position: relative;">
+        <input type="password" id="password" placeholder="Tapez votre mode passe">
+        <button type="button" class="toggle-password" onclick="togglePassword('password')">👁</button>
+      </div>
     </div>
     <div class="champ-formulaire champ-formulaire-blue champ-formulaire-inscription">
-      <label for="confirmpassword">Confirmer votre mot de passe</label>
-      <input type="confirmpassword" id="confirmpassword" placeholder="Taper votre mot de passe">
+      <label for="confirmPassword">Confirmer votre mot de passe</label>
+      <div style="position: relative;">
+        <input type="password" id="confirmPassword" placeholder="Taper votre mot de passe">
+        <button type="button" class="toggle-password" onclick="togglePassword('confirmPassword')">👁</button>
+      </div>
     </div>
 
     <div class="option-rester-connecte option-rester-connecte-blue">
       <input type="checkbox" id="rester-connecte">
       <label for="rester-connecte">Rester connecter</label>
     </div>
-    <button type="submit" class="bouton-connexion bouton-connexion-blue">Créer un compte</button>
+    <button type="submit" id="login-button" class="bouton-connexion bouton-connexion-blue">Créer un compte</button>
   </form>
 </div>
 

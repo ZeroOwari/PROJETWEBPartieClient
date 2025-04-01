@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web4ALL Navigation</title>
   <link rel="stylesheet" href="assets/style-web.css">
+  <script src="../controler/connexion.js"></script>
 </head>
 <body class="body bg-pink">
 <header>
@@ -12,14 +13,13 @@
     <div class="logo">
       <img src="assets/logo.png" alt="Web4ALL Logo">
     </div>
-
     <div class="services-dropdown">
       <button class="hamburger-menu">
         <span class="hamburger-icon"></span>
         Services
       </button>
       <div class="dropdown-content">
-        <a href="accueil.html">Accueil</a>
+        <a href="choix-profil.html">Accueil</a>
         <a href="a-propos.html">À propos de nous</a>
         <a href="avis.html">Avis</a>
         <a href="recherche.html">Recherche</a>
@@ -48,13 +48,16 @@
     </div>
     <div class="champ-formulaire champ-formulaire-purple champ-formulaire-connexion">
       <label for="password">Mot de passe</label>
+      <div style="position: relative;">
       <input type="password" id="password" placeholder="Tapez votre mode passe">
+      <button type="button" class="toggle-password" onclick="togglePassword('password')">👁</button>
+    </div>
     </div>
     <div class="option-rester-connecte option-rester-connecte-purple">
       <input type="checkbox" id="rester-connecte">
       <label for="rester-connecte">Rester connecter</label>
     </div>
-    <button type="submit" class="bouton-connexion bouton-connexion-purple">Se connecter</button>
+    <button type="submit" id="login-button" class="bouton-connexion bouton-connexion-purple">Se connecter</button>
   </form>
 </div>
 </body>

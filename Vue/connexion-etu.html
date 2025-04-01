@@ -5,41 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web4ALL Navigation</title>
   <link rel="stylesheet" href="assets/style-web.css">
+  <script src="../controler/connexion.js"></script>
 </head>
-
-
-
-<header>
-<nav class="navbar">
-  <div class="logo">
-    <img src="assets/logo.png" alt="Web4ALL Logo">
-  </div>
-
-  <div class="services-dropdown">
-    <button class="hamburger-menu">
-      <span class="hamburger-icon"></span>
-      Services
-    </button>
-    <div class="dropdown-content">
-      <a href="accueil.html">Accueil</a>
-      <a href="a-propos.html">À propos de nous</a>
-      <a href="avis.html">Avis</a>
-      <a href="recherche.html">Recherche</a>
-      <a href="espace-tuteur.html">Espace Tuteur</a>
-      <a href="mon-compte-etudiant.html">Mon compte Étudiant</a>
-      <a href="mon-compte-tuteur.html">Mon compte Tuteur</a>
-    </div>
-  </div>
-
-  <div class="right-menu">
-    <a href="connexion.html" class="nav-button">Connexion</a>
-    <a href="espace-recruteur.html" class="nav-button">Espace recruteur</a>
-  </div>
-</nav>
-</header>
-
-
 <body class="body bg-white">
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Web4ALL Logo">
+    </div>
+
+    <div class="services-dropdown">
+      <button class="hamburger-menu">
+        <span class="hamburger-icon"></span>
+        Services
+      </button>
+      <div class="dropdown-content">
+        <a href="choix-profil.html">Accueil</a>
+        <a href="a-propos.html">À propos de nous</a>
+        <a href="avis.html">Avis</a>
+        <a href="recherche.html">Recherche</a>
+        <a href="espace-tuteur.html">Espace Tuteur</a>
+        <a href="mon-compte-etudiant.html">Mon compte Étudiant</a>
+        <a href="mon-compte-tuteur.html">Mon compte Tuteur</a>
+      </div>
+    </div>
+
+    <div class="right-menu">
+      <a href="connexion.html" class="nav-button">Connexion</a>
+      <a href="espace-recruteur.html" class="nav-button">Espace recruteur</a>
+    </div>
+  </nav>
+</header>
 <div class="container-white">
   <h1 class="job-title job-title-blue">Espace étudiant</h1>
 </div>
@@ -53,13 +49,16 @@
     </div>
     <div class="champ-formulaire champ-formulaire-blue champ-formulaire-connexion">
       <label for="password">Mot de passe</label>
+      <div style="position: relative;">
       <input type="password" id="password" placeholder="Tapez votre mode passe">
+      <button type="button" class="toggle-password" onclick="togglePassword('password')">👁</button>
+    </div>
     </div>
     <div class="option-rester-connecte option-rester-connecte-blue">
       <input type="checkbox" id="rester-connecte">
       <label for="rester-connecte">Rester connecter</label>
     </div>
-    <button type="submit" class="bouton-connexion bouton-connexion-blue">Se connecter</button>
+    <button type="submit" id="login-button" class="bouton-connexion bouton-connexion-blue">Se connecter</button>
   </form>
 </div>
 

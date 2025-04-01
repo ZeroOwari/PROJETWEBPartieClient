@@ -398,7 +398,7 @@ body {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .bloc-violet, .form-container {
     width: 100%;
     max-width: 600px;
@@ -411,7 +411,7 @@ body {
     padding: 20px;
     font-size: 16px;
   }
-  
+
   .btn-submit {
     padding: 20px 40px;
   }
@@ -524,7 +524,7 @@ body.cmpt {
 }
 
 main.cmpt {
-  background-image: url("assets/backgroundcompte.png");
+  background-image: url("backgroundcompte.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -850,6 +850,19 @@ body.connexion-page {
   color: white;
 }
 
+.toggle-password {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 3rem;
+  padding: 0;
+  z-index: 2;
+}
+
 /* Styles spécifiques pour la page d'informations de compte */
 .compte-container {
   max-width: 800px;
@@ -903,5 +916,72 @@ body.connexion-page {
   .compte-container {
     margin: 20px;
     padding: 20px;
+  }
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 80vw;
+  margin: 18vh auto;
+  padding: 15px 25px;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  max-width: 1000px;
+  font-family: Arial, sans-serif;
+}
+
+.filter-item {
+  flex: 1;
+}
+
+.filter-item label {
+  display: block;
+  font-size: 14px;
+  color: #7B8EEE;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.filter-item input, .filter-item select {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.filter-button {
+  background-color: #7B8EEE;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  align-self: flex-end;
+  height: 40px;
+}
+
+.filter-button:hover {
+  background-color: #5D5897;
+}
+
+@media (max-width: 768px) {
+  .filter-bar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .filter-item {
+    width: 100%;
+  }
+
+  .filter-button {
+    width: 100%;
+    align-self: center;
   }
 }
