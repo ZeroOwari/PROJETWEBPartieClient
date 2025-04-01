@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <section class="login-section">
+        <div class="login-container">
+            <h2>Connectez-vous à votre espace</h2>
+            <p class="subtitle">Choisissez votre profil pour accéder à votre compte</p>
+
+            <div class="cards">
+                {% for type in ['student', 'recruiter', 'tutor'] %}
+                    <div class="card {{ type }}">
+                        <div class="card-icon">
+                            <i class="fas fa-{{
+                            type == 'student' ? 'user-graduate' :
+                            (type == 'recruiter' ? 'briefcase' : 'chalkboard-teacher')
+                            }}"></i>
+                        </div>
+                        <h3>{{
+                            type == 'student' ? 'Étudiant' :
+                            (type == 'recruiter' ? 'Recruteur' : 'Tuteur')
+                            }}</h3>
+                        <button class="btn-login">Se connecter</button>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
