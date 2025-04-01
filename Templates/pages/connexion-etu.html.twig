@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connexion</title>
+    <style>
+        body { font-family: Arial; max-width: 500px; margin: 0 auto; padding: 20px; }
+        .alert { background: #ffebee; color: #c62828; padding: 15px; margin-bottom: 20px; }
+        input { display: block; width: 100%; padding: 10px; margin: 10px 0; }
+        button { background: #2196F3; color: white; border: none; padding: 10px 15px; }
+    </style>
+</head>
+<body>
+{% if error %}
+    <div class="alert">{{ error }}</div>
+{% endif %}
+
+<form method="POST" action="{{ base_url }}/?page=connexion-etu">
+    <h2>CONNEXION ÉTUDIANT</h2>
+
+    <input type="email" name="email" placeholder="Email"
+           value="etudiant@mail.com" required>
+
+    <input type="password" name="password" placeholder="Mot de passe"
+           value="pass123" required>
+
+    <button type="submit">SE CONNECTER</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "etudiants": [
+    {
+      "id": 1,
+      "email": "etudiant@mail.com",
+      "password": "pass123",
+      "nom": "Dupont",
+      "prenom": "Jean",
+      "telephone": "+330612345678",
+      "ville": "Paris"
+    }
+  ]
+}
