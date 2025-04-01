@@ -1,36 +1,40 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-    <div class="login-container" style="max-width: 400px; margin: 0 auto; padding: 20px;">
-        {% if error %}
-            <div style="color:red; margin-bottom:20px; padding:10px; background:#ffeeee;">
-                {{ error }}
-                <br><br>Essayez :<br>
-                Email: <strong>etudiant@mail.com</strong><br>
-                MDP: <strong>pass123</strong>
-            </div>
-        {% endif %}
+    {% if user %}
+        <script>window.location.href = "?page=accueil";</script>
+    {% else %}
+        <div class="login-container" style="max-width: 400px; margin: 0 auto; padding: 20px;">
+            {% if error %}
+                <div style="color:red; margin-bottom:20px; padding:10px; background:#ffeeee;">
+                    {{ error }}
+                    <br><br>Essayez :<br>
+                    Email: <strong>etudiant@mail.com</strong><br>
+                    MDP: <strong>pass123</strong>
+                </div>
+            {% endif %}
 
-        <form method="POST" action="">
-            <input type="hidden" name="login" value="1">
+            <form method="POST" action="?page=connexion-etu">
+                <input type="hidden" name="login" value="1">
 
-            <h2 style="text-align: center;">Connexion Étudiant</h2>
+                <h2 style="text-align: center;">Connexion Étudiant</h2>
 
-            <div style="margin-bottom: 15px;">
-                <label style="display:block; margin-bottom:5px;">Email:</label>
-                <input type="email" name="email" required
-                       value="etudiant@mail.com" style="width:100%; padding:8px; border:1px solid #ccc;">
-            </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="display:block; margin-bottom:5px;">Email:</label>
+                    <input type="email" name="email" required
+                           value="etudiant@mail.com" style="width:100%; padding:8px; border:1px solid #ccc;">
+                </div>
 
-            <div style="margin-bottom: 15px;">
-                <label style="display:block; margin-bottom:5px;">Mot de passe:</label>
-                <input type="password" name="password" required
-                       value="pass123" style="width:100%; padding:8px; border:1px solid #ccc;">
-            </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="display:block; margin-bottom:5px;">Mot de passe:</label>
+                    <input type="password" name="password" required
+                           value="pass123" style="width:100%; padding:8px; border:1px solid #ccc;">
+                </div>
 
-            <button type="submit" style="width:100%; background:#4CAF50; color:white; padding:10px; border:none; cursor:pointer;">
-                Se connecter
-            </button>
-        </form>
-    </div>
+                <button type="submit" style="width:100%; background:#4CAF50; color:white; padding:10px; border:none; cursor:pointer;">
+                    Se connecter
+                </button>
+            </form>
+        </div>
+    {% endif %}
 {% endblock %}

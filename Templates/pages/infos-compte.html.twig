@@ -1,22 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Mon Compte</title>
-    <style>
-        body { font-family: Arial; max-width: 500px; margin: 0 auto; padding: 20px; }
-        .info { background: #e8f5e9; padding: 20px; margin-top: 20px; }
-    </style>
-</head>
-<body>
-<h1>MON COMPTE</h1>
+{% extends "base.html.twig" %}
 
-{% if user %}
-    <div class="info">
-        <p>Bonjour <strong>{{ user.prenom }} {{ user.nom }}</strong> !</p>
-        <p>Email: {{ user.email }}</p>
+{% block content %}
+    <div style="max-width: 500px; margin: 0 auto; padding: 20px;">
+        <h1>MON COMPTE</h1>
+
+        {% if user %}
+            <div style="background: #e8f5e9; padding: 20px; margin-top: 20px;">
+                <p>Bonjour <strong>{{ user.prenom }} {{ user.nom }}</strong> !</p>
+                <p>Email: {{ user.email }}</p>
+                <p>Âge: {{ user.age }} ans</p>
+                <p>Formation: {{ user.formation }}</p>
+            </div>
+        {% else %}
+            <p style="color:red">ERREUR : Veuillez vous <a href="?page=connexion-etu">connecter</a></p>
+        {% endif %}
     </div>
-{% else %}
-    <p style="color:red">ERREUR : Veuillez vous <a href="{{ base_url }}/?page=connexion-etu">connecter</a></p>
-{% endif %}
-</body>
-</html>
+{% endblock %}

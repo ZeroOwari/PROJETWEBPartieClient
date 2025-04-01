@@ -8,6 +8,25 @@
       "password": "pass123",
       "age": 22,
       "formation": "Informatique"
+    },
+    {
+      "id": 2,
+      "nom": "Martin",
+      "prenom": "Marie",
+      "email": "marie.martin@cool.com",
+      "password": "martinecool",
+      "age": 48,
+      "formation": "Secrétariat"
+    },
+    {
+      "id": 3,
+      "nom": "Taveirne",
+      "prenom": "Simon",
+      "email": "simon.taveirne@proton.me",
+      "password": "DieuUltime",
+      "age": 19,
+      "formation": "Ingénieurie"
     }
+
   ]
 }

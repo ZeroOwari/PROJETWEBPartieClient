@@ -17,23 +17,22 @@
                 <a href="{{ base_url }}?page=avis"><i class="fas fa-star"></i> Avis</a>
                 <a href="{{ base_url }}?page=recherche"><i class="fas fa-search"></i> Recherche</a>
                 <a href="{{ base_url }}?page=espace-tuteur"><i class="fas fa-chalkboard-teacher"></i> Espace Tuteur</a>
-                {% if user and user.type == 'etudiant' %}
-                    <a href="{{ base_url }}?page=mon-compte"><i class="fas fa-user-graduate"></i> Mon compte Étudiant</a>
-                {% elseif user and user.type == 'tuteur' %}
-                    <a href="{{ base_url }}?page=mon-compte"><i class="fas fa-user-tie"></i> Mon compte Tuteur</a>
-                {% else %}
-                    <a href="{{ base_url }}?page=connexion"><i class="fas fa-sign-in-alt"></i> Connexion</a>
-                {% endif %}
             </div>
         </div>
         <h1>P.A.I.J</h1>
         <div class="right-menu">
             {% if user %}
-                <a href="{{ base_url }}?logout=1" class="nav-button"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+                <a href="{{ base_url }}?page=infos-compte" class="nav-button">
+                    <i class="fas fa-user-circle"></i> Mon compte
+                </a>
+                <a href="{{ base_url }}?logout=1" class="nav-button">
+                    <i class="fas fa-sign-out-alt"></i> Déconnexion
+                </a>
             {% else %}
-                <a href="{{ base_url }}?page=connexion" class="nav-button active"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+                <a href="{{ base_url }}?page=connexion-etu" class="nav-button {{ current_page == 'connexion-etu' ? 'active' : '' }}">
+                    <i class="fas fa-sign-in-alt"></i> Connexion
+                </a>
             {% endif %}
-            <a href="{{ base_url }}?page=espace-recruteur" class="nav-button"><i class="fas fa-briefcase"></i> Espace recruteur</a>
         </div>
     </nav>
 

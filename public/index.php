@@ -2,45 +2,28 @@
 session_start();
 require_once __DIR__.'/../vendor/autoload.php';
 
-// Ajoutez ceci juste après session_start()
+$loader = new \Twig\Loader\FilesystemLoader(__DIR__.'/../Templates');
+$twig = new \Twig\Environment($loader, ['cache' => false]);
+
+// Fonction asset
+$twig->addFunction(new \Twig\TwigFunction('asset', function ($path) {
+    $vueAssets = ['style-web.css', 'logo.png', 'backgroundcompte.png'];
+    if (in_array(basename($path), $vueAssets)) {
+        return '/Vue/assets/' . ltrim($path, '/');
+    }
+    return '/public/assets/' . ltrim($path, '/');
+}));
+
+$twig->addGlobal('base_url', '');
+
+// Gestion de la déconnexion
 if (isset($_GET['logout'])) {
     session_destroy();
     header('Location: ?page=accueil');
     exit;
 }
 
-$loader = new \Twig\Loader\FilesystemLoader(__DIR__.'/../Templates');
-$twig = new \Twig\Environment($loader, [
-    'cache' => false,
-    'debug' => true // Ajout du mode debug pour Twig
-]);
-
-// Fonction asset optimisée pour votre structure
-$twig->addFunction(new \Twig\TwigFunction('asset', function ($path) {
-    // Assets spécifiques à Vue
-    $vueAssets = [
-        'style-web.css',
-        'Avatar.png',
-        'backgroundcompte.png',
-        'flou.png',
-        'flou2.png',
-        'flou3.png',
-        'logo.png',
-        'logo2.png'
-    ];
-
-    if (in_array(basename($path), $vueAssets)) {
-        return '/Vue/assets/' . ltrim($path, '/');
-    }
-
-    // Par défaut, utilise public/assets
-    return '/public/assets/' . ltrim($path, '/');
-}));
-
-// Variable globale pour les URLs de base
-$twig->addGlobal('base_url', '');
-
-// TRAITEMENT CONNEXION
+// Traitement de la connexion
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
     $users = json_decode(file_get_contents(__DIR__.'/../public/assets/users.json'), true);
 
@@ -59,17 +42,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
     exit;
 }
 
-// Gestion des pages
-$allowedPages = ['accueil', 'connexion-etu', 'infos-compte'];
-$page = $_GET['page'] ?? 'infos-compte';
+// Pages autorisées
+$publicPages = ['accueil', 'connexion-etu', 'a-propos'];
+$privatePages = ['infos-compte', 'recherche', 'espace-tuteur'];
+$allPages = array_merge($publicPages, $privatePages, ['404']);
 
-// Redirection si non connecté
-if (!isset($_SESSION['user']) && $page !== 'connexion-etu') {
+// Gestion de la page demandée
+$page = $_GET['page'] ?? 'accueil';
+
+// Vérification de l'accès
+if (!in_array($page, $allPages)) {
+    $page = '404';
+} elseif (in_array($page, $privatePages) && !isset($_SESSION['user'])) {
     header('Location: ?page=connexion-etu');
+    exit;
+} elseif ($page === 'connexion-etu' && isset($_SESSION['user'])) {
+    header('Location: ?page=accueil');
     exit;
 }
 
-// Préparation du contexte
+// Contexte
 $context = [
     'current_page' => $page,
     'site_name' => 'P.A.I.J',
@@ -79,13 +71,9 @@ $context = [
 
 unset($_SESSION['error']);
 
-// Rendu sécurisé
+// Rendu
 try {
-    $template = "pages/{$page}.html.twig";
-    if (!$loader->exists($template)) {
-        $template = "pages/404.html.twig";
-    }
-    echo $twig->render($template, $context);
-} catch (Exception $e) {
+    echo $twig->render("pages/{$page}.html.twig", $context);
+} catch (\Twig\Error\LoaderError $e) {
     echo $twig->render("pages/404.html.twig", $context);
 }
