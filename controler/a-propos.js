@@ -3,12 +3,18 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-function isValidPassword(password) {
-    if (password.length < 10) return false;
-    if (!/[A-Z]/.test(password)) return false;
-    if (!/[0-9]/.test(password)) return false;
-    if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)) return false;
-    return true;
+function isValidName(name) {
+    if (name.length === 0) return false;
+    return name[0] === name[0].toUpperCase() && name[0] !== name[0].toLowerCase();
+}
+
+function isValidPhone(phone) {
+    const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+    return phone === '' || phoneRegex.test(phone);
+}
+
+function isValidMessage(message) {
+    return message.length >= 10;
 }
 
 function showErrorBubble(inputElement, message) {
@@ -26,10 +32,11 @@ function showErrorBubble(inputElement, message) {
     bubble.style.zIndex = '1000';
     bubble.style.fontSize = '16px';
     bubble.style.fontWeight = '500';
-    bubble.style.maxWidth = '300px';
+    bubble.style.maxWidth = '700px';
     bubble.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
     bubble.style.animation = 'fadeIn 0.3s ease-out';
 
+    // Ajout d'une flèche
     bubble.style.marginTop = '8px';
     bubble.style.setProperty('--arrow-size', '8px');
     bubble.style.setProperty('--arrow-color', '#ff4444');
@@ -55,6 +62,7 @@ function showErrorBubble(inputElement, message) {
     positionErrorBubble(inputElement, bubble);
     document.body.appendChild(bubble);
 
+    // Gestion des événements avec debounce pour les performances
     const updatePosition = debounce(() => positionErrorBubble(inputElement, bubble), 100);
     window.addEventListener('resize', updatePosition);
     window.addEventListener('scroll', updatePosition, { passive: true });
@@ -62,10 +70,12 @@ function showErrorBubble(inputElement, message) {
     inputElement.setAttribute('data-has-error', 'true');
     inputElement.classList.add('input-error');
 
+    // Supprimer la bulle après 10 secondes ou quand l'utilisateur commence à taper
     const timeoutId = setTimeout(() => {
         removeErrorBubble(inputElement);
     }, 10000);
 
+    // Stocker l'ID du timeout pour pouvoir l'annuler si besoin
     inputElement.setAttribute('data-error-timeout', timeoutId);
 }
 
@@ -82,15 +92,6 @@ function positionErrorBubble(inputElement, bubble) {
     const rect = inputElement.getBoundingClientRect();
     bubble.style.left = `${window.scrollX + rect.left}px`;
     bubble.style.top = `${window.scrollY + rect.bottom + 5}px`;
-}
-
-function togglePassword(fieldId) {
-    const field = document.getElementById(fieldId);
-    if (field.type === "password") {
-        field.type = "text";
-    } else {
-        field.type = "password";
-    }
 }
 
 function removeErrorBubble(inputElement) {
@@ -117,15 +118,39 @@ function removeErrorBubble(inputElement) {
 }
 
 function validateForm() {
-    const emailInput = document.getElementById('email');
-    const passwordInput = document.getElementById('password');
-    const loginButton = document.getElementById('login-button');
+    const lastNameInput = document.querySelector('input[placeholder="Nom"]');
+    const firstNameInput = document.querySelector('input[placeholder="Prénom"]');
+    const emailInput = document.querySelector('input[placeholder="E-mail"]');
+    const phoneInput = document.querySelector('input[placeholder="Téléphone"]');
+    const messageInput = document.querySelector('textarea[placeholder="Message"]');
+    const submitButton = document.querySelector('.btn-submit');
 
     function validateFields() {
+        const lastName = lastNameInput.value.trim();
+        const firstName = firstNameInput.value.trim();
         const email = emailInput.value.trim();
-        const password = passwordInput.value;
+        const phone = phoneInput.value.trim();
+        const message = messageInput.value.trim();
 
         let isValid = true;
+
+        if (lastName === '') {
+            removeErrorBubble(lastNameInput);
+        } else if (!isValidName(lastName)) {
+            showErrorBubble(lastNameInput, 'Le nom doit commencer par une majuscule');
+            isValid = false;
+        } else {
+            removeErrorBubble(lastNameInput);
+        }
+
+        if (firstName === '') {
+            removeErrorBubble(firstNameInput);
+        } else if (!isValidName(firstName)) {
+            showErrorBubble(firstNameInput, 'Le prénom doit commencer par une majuscule');
+            isValid = false;
+        } else {
+            removeErrorBubble(firstNameInput);
+        }
 
         if (email === '') {
             removeErrorBubble(emailInput);
@@ -136,42 +161,45 @@ function validateForm() {
             removeErrorBubble(emailInput);
         }
 
-        if (password === '') {
-            removeErrorBubble(passwordInput);
-        } else if (!isValidPassword(password)) {
-            let errorMsg = 'Le mot de passe doit contenir:';
-            errorMsg += password.length < 10 ? '\n- Au moins 10 caractères' : '';
-            errorMsg += !/[A-Z]/.test(password) ? '\n- Au moins une majuscule' : '';
-            errorMsg += !/[0-9]/.test(password) ? '\n- Au moins un chiffre' : '';
-            errorMsg += !/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password) ? '\n- Au moins un caractère spécial' : '';
-
-            showErrorBubble(passwordInput, errorMsg);
+        if (phone !== '' && !isValidPhone(phone)) {
+            showErrorBubble(phoneInput, 'Veuillez entrer un numéro de téléphone valide');
             isValid = false;
         } else {
-            removeErrorBubble(passwordInput);
+            removeErrorBubble(phoneInput);
         }
 
-        const allFieldsFilled = email && password;
-        loginButton.disabled = !isValid || !allFieldsFilled;
-        loginButton.style.opacity = loginButton.disabled ? '0.7' : '1';
-        loginButton.style.cursor = loginButton.disabled ? 'not-allowed' : 'pointer';
+        if (message === '') {
+            removeErrorBubble(messageInput);
+        } else if (!isValidMessage(message)) {
+            showErrorBubble(messageInput, 'Le message doit contenir au moins 10 caractères');
+            isValid = false;
+        } else {
+            removeErrorBubble(messageInput);
+        }
 
-        return isValid;
+        const allRequiredFieldsFilled = lastName && firstName && email && message;
+        submitButton.disabled = !isValid || !allRequiredFieldsFilled;
+        submitButton.style.opacity = submitButton.disabled ? '0.7' : '1';
+        submitButton.style.cursor = submitButton.disabled ? 'not-allowed' : 'pointer';
+
+        return isValid && allRequiredFieldsFilled;
     }
 
     const debouncedValidate = debounce(validateFields, 300);
+    lastNameInput.addEventListener('input', debouncedValidate);
+    firstNameInput.addEventListener('input', debouncedValidate);
     emailInput.addEventListener('input', debouncedValidate);
-    passwordInput.addEventListener('input', debouncedValidate);
+    phoneInput.addEventListener('input', debouncedValidate);
+    messageInput.addEventListener('input', debouncedValidate);
 
-    loginButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        if (validateFields()) {
-            alert('Connexion réussie !');
-        } else {
+    document.querySelector('form').addEventListener('submit', function(event) {
+        if (!validateFields()) {
+            event.preventDefault();
             validateFields();
+        } else {
+            alert('Votre message a été envoyé avec succès !');
         }
     });
-
     validateFields();
 }
 

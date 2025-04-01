@@ -18,14 +18,12 @@ function isValidName(name) {
 }
 
 function showErrorBubble(inputElement, message) {
-    // Supprimer les anciennes bulles d'erreur pour cet élément
     removeErrorBubble(inputElement);
 
     const bubble = document.createElement('div');
     bubble.className = 'error-bubble';
     bubble.textContent = message;
 
-    // Style amélioré de la bulle
     bubble.style.backgroundColor = '#ff4444';
     bubble.style.color = 'white';
     bubble.style.padding = '12px 16px';
@@ -38,7 +36,6 @@ function showErrorBubble(inputElement, message) {
     bubble.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
     bubble.style.animation = 'fadeIn 0.3s ease-out';
 
-    // Ajout d'une flèche
     bubble.style.marginTop = '8px';
     bubble.style.setProperty('--arrow-size', '8px');
     bubble.style.setProperty('--arrow-color', '#ff4444');
@@ -64,7 +61,6 @@ function showErrorBubble(inputElement, message) {
     positionErrorBubble(inputElement, bubble);
     document.body.appendChild(bubble);
 
-    // Gestion des événements avec debounce pour les performances
     const updatePosition = debounce(() => positionErrorBubble(inputElement, bubble), 100);
     window.addEventListener('resize', updatePosition);
     window.addEventListener('scroll', updatePosition, { passive: true });
@@ -72,12 +68,10 @@ function showErrorBubble(inputElement, message) {
     inputElement.setAttribute('data-has-error', 'true');
     inputElement.classList.add('input-error');
 
-    // Supprimer la bulle après 10 secondes ou quand l'utilisateur commence à taper
     const timeoutId = setTimeout(() => {
         removeErrorBubble(inputElement);
     }, 10000);
 
-    // Stocker l'ID du timeout pour pouvoir l'annuler si besoin
     inputElement.setAttribute('data-error-timeout', timeoutId);
 }
 
@@ -143,7 +137,6 @@ function validateForm() {
 
         let isValid = true;
 
-        // Validation email
         if (email === '') {
             removeErrorBubble(emailInput);
         } else if (!isValidEmail(email)) {
@@ -194,7 +187,6 @@ function validateForm() {
         return isValid;
     }
 
-    // Ajout des écouteurs avec debounce pour améliorer les performances
     const debouncedValidate = debounce(validateFields, 300);
     emailInput.addEventListener('input', debouncedValidate);
     passwordInput.addEventListener('input', debouncedValidate);
@@ -210,7 +202,6 @@ function validateForm() {
         }
     });
 
-    // Validation initiale
     validateFields();
 }
 
