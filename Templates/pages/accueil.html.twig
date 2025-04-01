@@ -1,5 +1,14 @@
 {% extends "base.html.twig" %}
 
+{% block banner %}
+    <section class="banner">
+        <div class="banner-overlay">
+            <h1>{{ site_name }}</h1>
+            <p>Plateforme de Tutorat et d'Accompagnement Scolaire</p>
+        </div>
+    </section>
+{% endblock %}
+
 {% block content %}
     <section class="login-section">
         <div class="login-container">
@@ -7,19 +16,19 @@
             <p class="subtitle">Choisissez votre profil pour accéder à votre compte</p>
 
             <div class="cards">
-                {% for type in ['student', 'recruiter', 'tutor'] %}
+                {% for type, icon in {
+                    'student': 'user-graduate',
+                    'recruiter': 'briefcase',
+                    'tutor': 'chalkboard-teacher'
+                } %}
                     <div class="card {{ type }}">
                         <div class="card-icon">
-                            <i class="fas fa-{{
-                            type == 'student' ? 'user-graduate' :
-                            (type == 'recruiter' ? 'briefcase' : 'chalkboard-teacher')
-                            }}"></i>
+                            <i class="fas fa-{{ icon }}"></i>
                         </div>
-                        <h3>{{
-                            type == 'student' ? 'Étudiant' :
-                            (type == 'recruiter' ? 'Recruteur' : 'Tuteur')
-                            }}</h3>
-                        <button class="btn-login">Se connecter</button>
+                        <h3>{{ type|capitalize }}</h3>
+                        <a href="?page=connexion-{{ type == 'student' ? 'etu' : type }}" class="btn-login">
+                            Se connecter
+                        </a>
                     </div>
                 {% endfor %}
             </div>

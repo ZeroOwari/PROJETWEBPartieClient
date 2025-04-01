@@ -5,6 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P.A.I.J - Informations</title>
     <link rel="stylesheet" href="assets/style-web.css">
+    <style>
+        /* Styles spécifiques pour cette page */
+        .account-container {
+            max-width: 900px;
+            margin: 40px auto;
+            display: flex;
+            gap: 30px;
+        }
+
+        .account-avatar {
+            width: 200px;
+            text-align: center;
+        }
+
+        .account-avatar img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #7B8EEE;
+        }
+
+        .account-details {
+            flex: 1;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(97, 91, 155, 0.1);
+        }
+
+        .detail-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .detail-row p {
+            flex: 1;
+            margin: 0;
+            color: #5D5897;
+            font-size: 16px;
+        }
+
+        .detail-row button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: #7B8EEE;
+            transition: transform 0.2s;
+        }
+
+        .detail-row button:hover {
+            transform: scale(1.2);
+            color: #5A1763;
+        }
+
+        @media (max-width: 768px) {
+            .account-container {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .account-avatar {
+                margin: 0 auto;
+            }
+        }
+    </style>
 </head>
 
 <body class="cmpt">
@@ -37,47 +107,40 @@
     </nav>
 </header>
 
-
-
 <section class="banner">
     <h1>Informations du compte</h1>
 </section>
 
 <main>
-    <div class="info-container">
-        <div class="left-card">
-            <div class="avatar">
-                <img src="assets/Avatar.png" alt="Avatar">
-            </div>
-            <div class="user-info">
-                <p>Utilisateur :</p>
-                <p>John DOE</p>
-            </div>
+    <div class="account-container">
+        <div class="account-avatar">
+            <img src="assets/Avatar.png" alt="Avatar">
+            <h3>John DOE</h3>
         </div>
-        <div class="right-card">
-            <div class="row">
-                <p>Mail :
-                john.doe@mail.com</p>
+        
+        <div class="account-details">
+            <div class="detail-row">
+                <p><strong>Mail :</strong> john.doe@mail.com</p>
                 <button>✎</button>
             </div>
-            <div class="row">
-                <p>Tél :
-                +330771820070</p>
+            
+            <div class="detail-row">
+                <p><strong>Tél :</strong> +330771820070</p>
                 <button>✎</button>
             </div>
-            <div class="row">
-                <p>Localisation :
-                Montcuq(46), FR</p>
+            
+            <div class="detail-row">
+                <p><strong>Localisation :</strong> Montcuq(46), FR</p>
                 <button>✎</button>
             </div>
-            <div class="row">
-                <p>Mot de passe :
-                **********</p>
+            
+            <div class="detail-row">
+                <p><strong>Mot de passe :</strong> **********</p>
                 <button>✎</button>
             </div>
-            <div class="row">
-                <p>Date de naissance :
-                01/01/2000</p>
+            
+            <div class="detail-row">
+                <p><strong>Date de naissance :</strong> 01/01/2000</p>
                 <button>✎</button>
             </div>
         </div>
@@ -85,7 +148,10 @@
 </main>
 
 <footer>
-    <a id="footer" href="mentions.html"> Tous droits réservés 2025 © Politique relative aux cookies, politique de confidentialité et conditions d'utilisation </a>
+    <div class="footer-content">
+        <p>Web4ALL - 2025</p>
+        <p><a id="footer" href="mentions.html">Tous droits réservés 2025 © Politique relative aux cookies, politique de confidentialité et conditions d'utilisation</a></p>
+    </div>
 </footer>
 
 </body>
