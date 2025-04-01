@@ -1,7 +1,9 @@
 <header>
     <nav class="navbar">
         <div class="logo">
-            <img src="{{ asset('logo.png') }}" alt="Logo {{ site_name }}">
+            <a href="{{ base_url }}?page=accueil">
+                <img src="{{ asset('logo.png') }}" alt="Web4ALL Logo">
+            </a>
         </div>
 
         <div class="services-dropdown">
@@ -10,31 +12,37 @@
                 Services
             </button>
             <div class="dropdown-content">
-                {% for item in [
-                    {'path': 'accueil', 'icon': 'home', 'text': 'Accueil'},
-                    {'path': 'a-propos', 'icon': 'info-circle', 'text': 'À propos'},
-                    {'path': 'avis', 'icon': 'star', 'text': 'Avis'},
-                    {'path': 'recherche', 'icon': 'search', 'text': 'Recherche'},
-                    {'path': 'espace-tuteur', 'icon': 'chalkboard-teacher', 'text': 'Espace Tuteur'}
-                ] %}
-                    <a href="?page={{ item.path }}" class="{{ current_page == item.path ? 'active' }}">
-                        <i class="fas fa-{{ item.icon }}"></i> {{ item.text }}
-                    </a>
-                {% endfor %}
+                <a href="{{ base_url }}?page=accueil"><i class="fas fa-home"></i> Accueil</a>
+                <a href="{{ base_url }}?page=a-propos"><i class="fas fa-info-circle"></i> À propos de nous</a>
+                <a href="{{ base_url }}?page=avis"><i class="fas fa-star"></i> Avis</a>
+                <a href="{{ base_url }}?page=recherche"><i class="fas fa-search"></i> Recherche</a>
+                <a href="{{ base_url }}?page=espace-tuteur"><i class="fas fa-chalkboard-teacher"></i> Espace Tuteur</a>
+                {% if user and user.type == 'etudiant' %}
+                    <a href="{{ base_url }}?page=mon-compte"><i class="fas fa-user-graduate"></i> Mon compte Étudiant</a>
+                {% elseif user and user.type == 'tuteur' %}
+                    <a href="{{ base_url }}?page=mon-compte"><i class="fas fa-user-tie"></i> Mon compte Tuteur</a>
+                {% else %}
+                    <a href="{{ base_url }}?page=connexion"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+                {% endif %}
             </div>
         </div>
-
-        <h1>{{ site_name }}</h1>
-
+        <h1>P.A.I.J</h1>
         <div class="right-menu">
-            <a href="?page=connexion-etu" class="nav-button {{ current_page == 'connexion-etu' ? 'active' }}">
-                <i class="fas fa-sign-in-alt"></i> Connexion
-            </a>
-            <a href="?page=connexion-recruteur" class="nav-button {{ current_page == 'connexion-recruteur' ? 'active' }}">
-                <i class="fas fa-briefcase"></i> Espace recruteur
-            </a>
+            {% if user %}
+                <a href="{{ base_url }}?logout=1" class="nav-button"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+            {% else %}
+                <a href="{{ base_url }}?page=connexion" class="nav-button active"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+            {% endif %}
+            <a href="{{ base_url }}?page=espace-recruteur" class="nav-button"><i class="fas fa-briefcase"></i> Espace recruteur</a>
         </div>
     </nav>
 
-    {% block banner %}{% endblock %}
+    {% if current_page == 'accueil' %}
+        <section class="banner">
+            <div class="banner-overlay">
+                <h1>P.A.I.J</h1>
+                <p>Plateforme de Tutorat et d'Accompagnement Scolaire</p>
+            </div>
+        </section>
+    {% endif %}
 </header>
