@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar">
         <div class="logo">
-            <a href="{{ base_url }}?page=accueil">
+            <a href="{{ base_url }}?page=index">
                 <img src="{{ asset('logo.png') }}" alt="Web4ALL Logo">
             </a>
         </div>
@@ -29,7 +29,7 @@
                     <i class="fas fa-sign-out-alt"></i> Déconnexion
                 </a>
             {% else %}
-                <a href="{{ base_url }}?page=connexion-etu" class="nav-button {{ current_page == 'connexion-etu' ? 'active' : '' }}">
+                <a href="{{ base_url }}?page=accueil" class="nav-button {{ current_page == 'accueil' ? 'active' : '' }}">
                     <i class="fas fa-sign-in-alt"></i> Connexion
                 </a>
             {% endif %}

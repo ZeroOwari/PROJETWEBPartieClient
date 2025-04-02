@@ -47,12 +47,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
 }
 
 // Pages autorisées
-$publicPages = ['accueil', 'connexion-etu', 'a-propos', 'connexion-pil', 'connexion-adm', 'mentions', 'a-propos', 'avis', 'inscription-etu', 'inscription-pil','espace-pilote'];
+$publicPages = ['accueil', 'connexion-etu', 'a-propos', 'connexion-pil', 'connexion-adm', 'mentions', 'a-propos', 'avis', 'inscription-etu', 'inscription-pil','espace-pilote', 'choix','index'];
 $privatePages = ['infos-compte', 'recherche', 'espace-tuteur'];
 $allPages = array_merge($publicPages, $privatePages, ['404']);
 
 // Gestion de la page demandée
-$page = $_GET['page'] ?? 'accueil';
+$page = $_GET['page'] ?? 'index';
 
 // Vérification de l'accès
 if (!in_array($page, $allPages)) {

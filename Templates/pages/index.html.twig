@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+
+{% block head %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+    <div class="container-a_propos">
+        <img src="{{ asset('flou3.png') }}" class="image-a_propops">
+
+    </div>
+    <div class="filter-bar">
+        <div class="filter-item">
+            <label for="keywords">Mots clés</label>
+            <input type="text" id="keywords" placeholder="Rechercher par mots clés">
+        </div>
+
+        <div class="filter-item">
+            <label for="location">Localisation</label>
+            <input type="text" id="location" placeholder="Localisation">
+        </div>
+
+        <div class="filter-item">
+            <label for="contract">Contrat</label>
+            <select id="contract">
+                <option value="">Type de contrat</option>
+                <option value="cdi">CDI</option>
+                <option value="cdd">CDD</option>
+                <option value="freelance">Alternance</option>
+                <option value="stage">Stage</option>
+            </select>
+        </div>
+        <button class="filter-button">Je filtre</button>
+    </div>
+    <div class="accueil-title">
+        <h1>Trouvez l'offre que vous cherchez</h1>
+    </div>
+    <img src="{{ asset('accueil.png') }}" class="image-container">
+{% endblock %}
