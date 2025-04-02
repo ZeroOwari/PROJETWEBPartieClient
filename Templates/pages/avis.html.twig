@@ -1,0 +1,113 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <div class="avis-page">
+        <h1 class="avis-page-titre">Vos avis sont importants</h1>
+
+        <!-- Colonne gauche - Formulaire -->
+        <div class="avis-col-gauche">
+            <div class="avis-container">
+                <h2 class="avis-titre-section">Partagez votre expérience</h2>
+
+                <div class="avis-formulaire">
+                    <div class="avis-separateur"></div>
+
+                    <form id="avis-form" action="#" method="post">
+                        <div class="avis-groupe-formulaire">
+                            <label for="avis-nom" class="avis-label">Nom</label>
+                            <input type="text" id="avis-nom" name="nom" class="avis-input" required>
+                        </div>
+
+                        <div class="avis-groupe-formulaire">
+                            <label for="avis-email" class="avis-label">Email</label>
+                            <input type="email" id="avis-email" name="email" class="avis-input" required>
+                        </div>
+
+                        <div class="avis-groupe-formulaire">
+                            <label for="avis-sujet" class="avis-label">Sujet</label>
+                            <input type="text" id="avis-sujet" name="sujet" class="avis-input" required>
+                        </div>
+
+                        <div class="avis-evaluation">
+                            <label class="avis-label">Votre satisfaction</label>
+                            <div class="avis-etoiles">
+                                <input type="radio" id="avis-etoile5" name="note" value="5">
+                                <label for="avis-etoile5" class="avis-etoiles-label"></label>
+                                <input type="radio" id="avis-etoile4" name="note" value="4">
+                                <label for="avis-etoile4" class="avis-etoiles-label"></label>
+                                <input type="radio" id="avis-etoile3" name="note" value="3">
+                                <label for="avis-etoile3" class="avis-etoiles-label"></label>
+                                <input type="radio" id="avis-etoile2" name="note" value="2">
+                                <label for="avis-etoile2" class="avis-etoiles-label"></label>
+                                <input type="radio" id="avis-etoile1" name="note" value="1">
+                                <label for="avis-etoile1" class="avis-etoiles-label"></label>
+                            </div>
+                        </div>
+
+                        <div class="avis-groupe-formulaire">
+                            <label for="avis-commentaire" class="avis-label">Votre avis</label>
+                            <textarea id="avis-commentaire" name="commentaire" class="avis-textarea" required></textarea>
+                        </div>
+
+                        <button type="submit" class="avis-bouton-soumettre">Envoyer</button>
+                    </form>
+
+                    <div class="avis-separateur"></div>
+                </div>
+            </div>
+        </div>
+        <div class="avis-col-droite">
+            <h2 class="avis-liste-titre">Avis de nos clients</h2>
+
+            <div class="avis-liste-container">
+                <ul class="avis-liste">
+
+                    <li class="avis-item">
+                        <div class="avis-item-header">
+                            <span class="avis-item-nom">Marie Dupont</span>
+                            <span class="avis-item-date">15/03/8000</span>
+                        </div>
+                        <div class="avis-item-sujet">Service client excellent</div>
+                        <p class="avis-item-commentaire">
+                            J'ai été très impressionnée par la réactivité du service client. Mon problème a été résolu en moins de 24h !
+                        </p>
+                        <div class="avis-item-note">★★★★★</div>
+                    </li>
+                    <li class="avis-item">
+                        <div class="avis-item-header">
+                            <span class="avis-item-nom">Jean Martin</span>
+                            <span class="avis-item-date">10/03/2025</span>
+                        </div>
+                        <div class="avis-item-sujet">Produit de qualité</div>
+                        <p class="avis-item-commentaire">
+                            Le produit correspond parfaitement à la description. Je suis très satisfait de mon achat et je recommande cette boutique.
+                        </p>
+                        <div class="avis-item-note">★★★★☆</div>
+                    </li>
+                    <li class="avis-item">
+                        <div class="avis-item-header">
+                            <span class="avis-item-nom">Jean Martin</span>
+                            <span class="avis-item-date">10/03/2025</span>
+                        </div>
+                        <div class="avis-item-sujet">Produit de qualité</div>
+                        <p class="avis-item-commentaire">
+                            Le produit correspond parfaitement à la description. Je suis très satisfait de mon achat et je recommande cette boutique.
+                        </p>
+                        <div class="avis-item-note">★★★★☆</div>
+                    </li>
+                    <li class="avis-item">
+                        <div class="avis-item-header">
+                            <span class="avis-item-nom">Jean Martin</span>
+                            <span class="avis-item-date">10/03/2025</span>
+                        </div>
+                        <div class="avis-item-sujet">Produit de qualité</div>
+                        <p class="avis-item-commentaire">
+                            Le produit correspond parfaitement à la description. Je suis très satisfait de mon achat et je recommande cette boutique.
+                        </p>
+                        <div class="avis-item-note">★★★★☆</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
