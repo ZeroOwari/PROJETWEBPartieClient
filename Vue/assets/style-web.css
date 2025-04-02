@@ -1288,13 +1288,6 @@ button#filterBtn:hover {
   background-color: #7B8EEE;
 }
 
-.avis-separateur {
-  height: 3px;
-  background: linear-gradient(to right, #5A1763, #7B8EEE);
-  margin: 20px 0;
-  border-radius: 2px;
-}
-
 .avis-col-droite {
   flex: 1;
   min-width: 300px;
