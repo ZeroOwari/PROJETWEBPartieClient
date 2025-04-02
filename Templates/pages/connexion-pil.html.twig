@@ -1,47 +1,39 @@
 {% extends "base.html.twig" %}
 
+{% block head %}
+    <script src="{{ asset('connexion.js') }}"></script>
+{% endblock %}
 
 {% block content %}
     {% if user %}
     <script>window.location.href = "?page=accueil";</script>
     {% else %}
 
-<section class="banner">
-    <h1>Informations du compte</h1>
-</section>
 
-<main>
-    <div class="account-container">
-        <div class="account-avatar">
-            <img src="{{ assets('Avatar.png') }}" alt="Avatar">
-            <h3>John DOE</h3>
+        <img src="{{ asset('flou.png') }}" class="image">
+        <div class="bloc bloc-pink">
+            <h2 class="titre-connexion titre-connexion-purple">Se connecter</h2>
+            <form class="formulaire-connexion" action="ConnexionPilote.php" method="POST">
+                <div class="champ-formulaire champ-formulaire-purple champ-formulaire-connexion">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name = "email" placeholder="Entrez votre adresse email">
+                </div>
+                <div class="champ-formulaire champ-formulaire-purple champ-formulaire-connexion">
+                    <label for="password">Mot de passe</label>
+                    <div style="position: relative;">
+                        <input type="password" id="password" name="password" placeholder="Tapez votre mode passe">
+                        <button type="button" class="toggle-password" onclick="togglePassword('password')">👁</button>
+                    </div>
+                </div>
+                <div class="option-rester-connecte option-rester-connecte-purple">
+                    <input type="checkbox" id="rester-connecte">
+                    <label for="rester-connecte">Rester connecter</label>
+                </div>
+                <button type="submit" id="login-button" class="bouton-connexion bouton-connexion-purple">Se connecter</button>
+            </form>
         </div>
+        </body>
+        </html>
 
-        <div class="account-details">
-            <div class="detail-row">
-                <p><strong>Mail :</strong> john.doe@mail.com</p>
-                <button>✎</button>
-            </div>
-
-            <div class="detail-row">
-                <p><strong>Tél :</strong> +330771820070</p>
-                <button>✎</button>
-            </div>
-
-            <div class="detail-row">
-                <p><strong>Localisation :</strong> Montcuq(46), FR</p>
-                <button>✎</button>
-            </div>
-
-            <div class="detail-row">
-                <p><strong>Mot de passe :</strong> **********</p>
-                <button>✎</button>
-            </div>
-
-            <div class="detail-row">
-                <p><strong>Date de naissance :</strong> 01/01/2000</p>
-                <button>✎</button>
-            </div>
-        </div>
-    </div>
-</main>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+
+{% block head %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+    {% if not user %}
+        <script>window.location.href = "?page=connexion-pil";</script>
+    {% else %}
+        <div style="display: flex; flex-direction: column; min-height: calc(100vh - 60px - 60px);"> {# 60px pour header et footer #}
+            <section class="banner">
+                <h1>Informations du compte</h1>
+            </section>
+
+            <main style="flex: 1; display: flex; justify-content: center; align-items: center; background-color: #F4F7FF; padding: 20px 0;">
+                <div class="account-container" style="max-width: 1000px; width: 90%;">
+                    <div class="account-avatar">
+                        <img src="{{ asset('Avatar.png') }}" alt="Avatar">
+                        <h3>{{ user.prenom }} {{ user.nom }}</h3>
+                    </div>
+
+                    <div class="account-details">
+                        {% for field in [
+                            {label: 'Mail', value: user.email},
+                            {label: 'Tél', value: user.telephone|default('Non renseigné')},
+                            {label: 'Mot de passe', value: '**********'},
+                            {label: 'Date de naissance', value: user.date_naissance|default('Non renseignée')}
+                        ] %}
+                            <div class="detail-row">
+                                <p><strong>{{ field.label }} :</strong> {{ field.value }}</p>
+                                <button class="edit-btn">✎</button>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </main>
+        </div>
+    {% endif %}
+{% endblock %}

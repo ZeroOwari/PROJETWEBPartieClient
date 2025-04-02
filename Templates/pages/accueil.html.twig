@@ -10,42 +10,51 @@
 {% endblock %}
 
 {% block content %}
-    <section class="login-section">
-        <div class="login-container">
-            <h2>Connectez-vous à votre espace</h2>
-            <p class="subtitle">Choisissez votre profil pour accéder à votre compte</p>
+    <div class="accueil connexion-page">
+        <section class="login-section">
+            <div class="login-container">
+                <h2>Connectez-vous à votre espace</h2>
+                <p class="subtitle">Choisissez votre profil pour accéder à votre compte</p>
 
-            <div class="cards">
-                <div class="card student">
-                    <div class="card-icon">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <h3>Étudiant</h3>
-                    <a href="?page=connexion-etu" class="btn-login">
-                        Se connecter
-                    </a>
-                </div>
+                <div class="cards">
+                    <div class="card student">
+                        <div class="card-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3>Étudiant</h3>
+                        <a href="?page=connexion-etu" class="btn-login">
+                            Se connecter
+                        </a>
+                        <a href="?page=inscription-etu" class="btn-login">
+                            s'inscrire
+                        </a>
 
-                <div class="card tutor">
-                    <div class="card-icon">
-                        <i class="fas fa-chalkboard-teacher"></i>
                     </div>
-                    <h3>Tuteur</h3>
-                    <a href="?page=connexion-pil" class="btn-login">
-                        Se connecter
-                    </a>
-                </div>
 
-                <div class="card admin">
-                    <div class="card-icon">
-                        <i class="fas fa-user-shield"></i>
+                    <div class="card tutor">
+                        <div class="card-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3>Tuteur</h3>
+                        <a href="?page=connexion-pil" class="btn-login">
+                            Se connecter
+                        </a>
+                        <a href="?page=inscription-pil" class="btn-login">
+                            s'inscrire
+                        </a>
                     </div>
-                    <h3>Administrateur</h3>
-                    <a href="?page=connexion-adm" class="btn-login">
-                        Se connecter
-                    </a>
+
+                    <div class="card admin">
+                        <div class="card-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Administrateur</h3>
+                        <a href="?page=connexion-adm" class="btn-login">
+                            Se connecter
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
+    </div>
 {% endblock %}

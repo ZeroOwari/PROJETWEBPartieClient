@@ -788,7 +788,7 @@ body.connexion-page {
 .connexion-page .btn-login {
   background-color: white;
   color: #6e5ba3;
-  border: none;
+  border: 5px ;
   padding: 12px;
   margin: 8px 0;
   width: 100%;

@@ -1,0 +1,51 @@
+{% extends "base.html.twig" %}
+
+{% block head %}
+    <script src="{{ asset('inscription.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container container-white">
+        <h1 class="job-title job-title-blue">Espace étudiant</h1>
+    </div>
+    <img src="{{ asset('flou2.png') }}" class="image">
+    <div class="bloc bloc-white">
+        <h2 class="titre-connexion titre-connexion-blue">Créer votre compte</h2>
+        <form class="formulaire-connexion">
+            <div class="champ-formulaire champ-formulaire-blue champ-formulaire-inscription">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="Entrez votre adresse email">
+            </div>
+            <div class="champ-formulaire champ-formulaire-blue champ-formulaire-inscription">
+                <label for="name">Nom</label>
+                <input type="nom" id="name" placeholder="Entrez votre nom">
+            </div>
+            <div class="champ-formulaire champ-formulaire-blue champ-formulaire-inscription">
+                <label for="Date">Date de naissance</label>
+                <input type="Date" id="Date" placeholder="YYYY-MM-DD">
+            </div>
+            <div class="champ-formulaire champ-formulaire-blue champ-formulaire-inscription">
+                <label for="password">Mot de passe</label>
+                <div style="position: relative;">
+                    <input type="password" id="password" placeholder="Tapez votre mode passe">
+                    <button type="button" class="toggle-password" onclick="togglePassword('password')">👁</button>
+                </div>
+            </div>
+            <div class="champ-formulaire champ-formulaire-blue champ-formulaire-inscription">
+                <label for="confirmPassword">Confirmer votre mot de passe</label>
+                <div style="position: relative;">
+                    <input type="password" id="confirmPassword" placeholder="Taper votre mot de passe">
+                    <button type="button" class="toggle-password" onclick="togglePassword('confirmPassword')">👁</button>
+                </div>
+            </div>
+
+            <div class="option-rester-connecte option-rester-connecte-blue">
+                <input type="checkbox" id="rester-connecte">
+                <label for="rester-connecte">Rester connecter</label>
+            </div>
+            <button type="submit" id="login-button" class="bouton-connexion bouton-connexion-blue">Créer un compte</button>
+        </form>
+    </div>
+
+{% endblock %}

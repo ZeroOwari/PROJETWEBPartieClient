@@ -8,8 +8,12 @@ $twig = new \Twig\Environment($loader, ['cache' => false]);
 // Fonction asset
 $twig->addFunction(new \Twig\TwigFunction('asset', function ($path) {
     $vueAssets = ['style-web.css', 'logo.png', 'backgroundcompte.png', 'Avatar.png', 'logo2.png', 'flou.png', 'flou2.png', 'flou3.png', 'accueil.png'];
+    $jsFiles = ['inscription.js', 'connexion.js', 'a-propos.js', 'espace_pllote.js', 'espace_pllote_pourc.js']; // Liste tous vos fichiers JS
+
     if (in_array(basename($path), $vueAssets)) {
         return '/Vue/assets/' . ltrim($path, '/');
+    } elseif (in_array(basename($path), $jsFiles)) {
+        return '/Controler/' . ltrim($path, '/'); // Chemin vers les fichiers JS dans Controler/
     }
     return '/public/assets/' . ltrim($path, '/');
 }));
@@ -43,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
 }
 
 // Pages autorisées
-$publicPages = ['accueil', 'connexion-etu', 'a-propos', 'connexion-pil', 'connexion-adm', 'mentions', 'a-propos', 'avis'];
+$publicPages = ['accueil', 'connexion-etu', 'a-propos', 'connexion-pil', 'connexion-adm', 'mentions', 'a-propos', 'avis', 'inscription-etu', 'inscription-pil','espace-pilote'];
 $privatePages = ['infos-compte', 'recherche', 'espace-tuteur'];
 $allPages = array_merge($publicPages, $privatePages, ['404']);
 
