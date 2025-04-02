@@ -1,0 +1,178 @@
+[
+  {
+    "nom": "Blizzard Entertainment",
+    "ville": "Paris",
+    "secteur": "Jeux vidéo",
+    "Description": "Création de World of Warcraft et Diablo 4",
+    "Intitule_de_la_formation": "Développeur jeux vidéo",
+    "chemin_d_acces_logo": "image/icon_partager.png",
+    "Competence": ["C++", "Java", "Python", "Développement de jeux vidéo"],
+    "A_propos_de_l_entreprise": "Blizzard Entertainment est un développeur de jeux vidéo mondialement reconnu pour ses franchises à succès, notamment World of Warcraft et Diablo. Fondée en 1991, l'entreprise a eu un impact significatif sur l'industrie du jeu vidéo, en particulier dans le domaine des jeux en ligne massivement multijoueurs (MMO).",
+    "Objectif_du_poste": "Développer des jeux vidéo innovants et immersifs en utilisant les dernières technologies et moteurs de jeu."
+  },
+  {
+    "nom": "CD Projekt Red",
+    "ville": "Warsaw",
+    "secteur": "Jeux vidéo",
+    "Description": "Création de The Witcher 3 et Cyberpunk 2077",
+    "Intitule_de_la_formation": "Développeur Unity",
+    "chemin_d_acces_logo": "image/logo-Ankama.png",
+    "Competence": ["C#", "Unity", "Développement de jeux vidéo"],
+    "A_propos_de_l_entreprise": "CD Projekt Red est une entreprise polonaise spécialisée dans la création de jeux vidéo, notamment la série The Witcher et Cyberpunk 2077. L'entreprise est réputée pour ses mondes ouverts riches en histoire et sa passion pour les jeux de rôle immersifs.",
+    "Objectif_du_poste": "Contribuer à la création de mondes immersifs et à l'innovation dans le domaine des jeux vidéo avec Unity."
+  },
+  {
+    "nom": "Epic Games",
+    "ville": "Cary",
+    "secteur": "Jeux vidéo",
+    "Description": "Développement d'Unreal Engine et Fortnite",
+    "Intitule_de_la_formation": "Développeur Unreal Engine",
+    "chemin_d_acces_logo": "image/logo-Ankama.png",
+    "Competence": ["C++", "Unreal Engine", "Développement de jeux vidéo"],
+    "A_propos_de_l_entreprise": "Epic Games est une entreprise de jeux vidéo américaine connue pour la création du moteur Unreal Engine et de jeux populaires comme Fortnite. Fondée en 1991, Epic est un acteur majeur dans l'industrie du jeu vidéo et du développement de logiciels.",
+    "Objectif_du_poste": "Exploiter Unreal Engine pour créer des jeux à la pointe de la technologie."
+  },
+  {
+    "nom": "Square Enix",
+    "ville": "Tokyo",
+    "secteur": "Jeux vidéo",
+    "Description": "Création de Final Fantasy et Kingdom Hearts",
+    "Intitule_de_la_formation": "Développeur C++",
+    "chemin_d_acces_logo": "image/logo-Ankama.png",
+    "Competence": ["C++", "Développement de jeux vidéo", "Optimisation des performances"],
+    "A_propos_de_l_entreprise": "Square Enix est un développeur et éditeur japonais renommé dans le domaine des jeux vidéo, notamment pour ses franchises Final Fantasy, Kingdom Hearts et Dragon Quest. L'entreprise est célèbre pour ses RPG de grande envergure et ses récits profondément immersifs.",
+    "Objectif_du_poste": "Optimiser les performances des jeux tout en respectant les standards de qualité de Square Enix."
+  },
+  {
+    "nom": "Valve",
+    "ville": "Bellevue",
+    "secteur": "Jeux vidéo",
+    "Description": "Création de Steam et Half-Life",
+    "Intitule_de_la_formation": "Développeur C#",
+    "chemin_d_acces_logo": "image/logo-Ankama.png",
+    "Competence": ["C#", "C++", "Développement de jeux vidéo"],
+    "A_propos_de_l_entreprise": "Valve Corporation est une entreprise américaine spécialisée dans les jeux vidéo et la distribution en ligne. Fondée en 1996, Valve est à l'origine de la célèbre plateforme Steam et des jeux cultes comme Half-Life, Portal et Dota 2.",
+    "Objectif_du_poste": "Développer de nouvelles fonctionnalités pour Steam et créer des expériences de jeux uniques."
+  },
+  {
+    "nom": "Tesla",
+    "ville": "Palo Alto",
+    "secteur": "Automobile",
+    "Description": "Fabrication de voitures électriques et développement de technologies autonomes",
+    "Intitule_de_la_formation": "Développeur logiciels embarqués",
+    "chemin_d_acces_logo": "image/logo-Ankama.png",
+    "Competence": ["C", "C++", "Python", "Développement embarqué"],
+    "A_propos_de_l_entreprise": "Tesla est un constructeur automobile américain innovant, connu pour ses véhicules électriques haut de gamme, comme la Model S, et pour ses avancées dans la technologie des véhicules autonomes. Fondée par Elon Musk, Tesla est un leader de la transition énergétique.",
+    "Objectif_du_poste": "Développer des logiciels embarqués pour les véhicules autonomes et électriques."
+  },
+  {
+    "nom": "Google",
+    "ville": "Mountain View",
+    "secteur": "Technologie",
+    "Description": "Développement de Google Cloud et de solutions de machine learning",
+    "Intitule_de_la_formation": "Développeur AI",
+    "chemin_d_acces_logo": "image/logo-Ankama.png",
+    "Competence": ["Python", "Machine Learning", "TensorFlow", "Développement Cloud"],
+    "A_propos_de_l_entreprise": "Google est une entreprise technologique américaine mondialement connue, à l'origine du moteur de recherche éponyme. Elle est également un acteur majeur dans les domaines du cloud computing, du machine learning, de la publicité en ligne, et des systèmes d'exploitation mobiles avec Android.",
+    "Objectif_du_poste": "Créer des solutions innovantes en intelligence artificielle et machine learning pour les services Google."
+  },
+  {
+    "nom": "Microsoft",
+    "ville": "Redmond",
+    "secteur": "Technologie",
+    "Description": "Développement de Windows, Office et Xbox",
+    "Intitule_de_la_formation": "Développeur .NET",
+    "chemin_d_acces_logo": "image/logo-Ankama.png",
+    "Competence": [".NET", "C#", "SQL", "Développement logiciel"],
+    "A_propos_de_l_entreprise": "Microsoft est l'un des géants de la technologie mondiale, reconnu pour ses systèmes d'exploitation Windows, sa suite bureautique Office et sa console de jeux Xbox. Fondée en 1975 par Bill Gates et Paul Allen, l'entreprise est un leader dans les domaines de l'informatique, des logiciels et des services cloud.",
+    "Objectif_du_poste": "Développer des applications robustes et évolutives sur la plateforme .NET."
+  },
+  {
+    "nom": "Amazon",
+    "ville": "Seattle",
+    "secteur": "E-commerce",
+    "Description": "Développement de services cloud et d'Amazon Prime",
+    "Intitule_de_la_formation": "Développeur AWS",
+    "chemin_d_acces_logo": "image/logo-Ankama.png",
+    "Competence": ["AWS", "Python", "Cloud Computing", "DevOps"],
+    "A_propos_de_l_entreprise": "Amazon est un leader mondial de l'e-commerce, mais également un acteur majeur du cloud computing avec Amazon Web Services (AWS). Fondée par Jeff Bezos en 1994, l'entreprise est également impliquée dans la production de contenu via Amazon Prime Video et les services de livraison rapide.",
+    "Objectif_du_poste": "Optimiser les services cloud d'Amazon et contribuer à l'innovation dans le domaine des infrastructures et des technologies DevOps."
+  },
+  {
+    "nom": "Facebook",
+    "ville": "Menlo Park",
+    "secteur": "Réseaux sociaux",
+    "Description": "Développement de Facebook, Instagram et WhatsApp",
+    "Intitule_de_la_formation": "Développeur front-end",
+    "chemin_d_acces_logo": "image/logo-Ankama.png",
+    "Competence": ["JavaScript", "React", "HTML", "CSS", "Développement front-end"],
+    "A_propos_de_l_entreprise": "Facebook (maintenant Meta Platforms) est un leader mondial des réseaux sociaux, fondé en 2004 par Mark Zuckerberg. En plus de Facebook, l'entreprise possède Instagram, WhatsApp et Oculus VR, influençant profondément les interactions sociales à travers le monde.",
+    "Objectif_du_poste": "Développer des interfaces utilisateur innovantes et engageantes pour les applications de Meta Platforms."
+  },
+  {
+    "nom": "Apple",
+    "ville": "Cupertino",
+    "secteur": "Technologie",
+    "Description": "Création de l'iPhone, Mac et iOS",
+    "Intitule_de_la_formation": "Développeur iOS",
+    "chemin_d_acces_logo": "image/logo-Ankama.png",
+    "Competence": ["Swift", "Objective-C", "iOS Development", "Xcode"],
+    "A_propos_de_l_entreprise": "Apple est une entreprise technologique mondiale, célèbre pour ses produits innovants comme l'iPhone, l'iPad, le Mac, et les services associés. Fondée en 1976 par Steve Jobs, Steve Wozniak et Ronald Wayne, Apple est un leader dans le domaine de la technologie grand public.",
+    "Objectif_du_poste": "Développer des applications mobiles fluides et performantes pour l'écosystème iOS."
+  },
+  {
+    "nom": "IBM",
+    "ville": "Armonk",
+    "secteur": "Technologie",
+    "Description": "Développement de solutions d'IA et de cloud computing",
+    "Intitule_de_la_formation": "Développeur IA",
+    "chemin_d_acces_logo": "image/logo-Ankama.png",
+    "Competence": ["AI", "Python", "Machine Learning", "Cloud Computing"],
+    "A_propos_de_l_entreprise": "IBM est un géant de la technologie, connu pour ses solutions en informatique, cloud computing et intelligence artificielle. Fondée en 1911, l'entreprise est un leader dans l'innovation technologique et les services pour entreprises.",
+    "Objectif_du_poste": "Développer des solutions d'intelligence artificielle et de machine learning à grande échelle."
+  },
+  {
+    "nom": "Oracle",
+    "ville": "Redwood City",
+    "secteur": "Technologie",
+    "Description": "Développement de logiciels de gestion de bases de données",
+    "Intitule_de_la_formation": "Développeur bases de données",
+    "chemin_d_acces_logo": "image/logo-Ankama.png",
+    "Competence": ["SQL", "PL/SQL", "Oracle Database", "Développement logiciel"],
+    "A_propos_de_l_entreprise": "Oracle est une entreprise américaine spécialisée dans les logiciels de gestion de bases de données et les solutions cloud. Fondée en 1977, Oracle est un acteur clé dans l'industrie du logiciel pour entreprises.",
+    "Objectif_du_poste": "Contribuer au développement et à l'optimisation des bases de données et des systèmes cloud d'Oracle."
+  },
+  {
+    "nom": "Nvidia",
+    "ville": "Santa Clara",
+    "secteur": "Technologie",
+    "Description": "Création de cartes graphiques et de solutions d'IA",
+    "Intitule_de_la_formation": "Développeur GPU",
+    "chemin_d_acces_logo": "image/logo-Ankama.png",
+    "Competence": ["C++", "CUDA", "GPU Programming", "Développement logiciel"],
+    "A_propos_de_l_entreprise": "Nvidia est une entreprise américaine spécialisée dans la conception de processeurs graphiques et de cartes graphiques. Fondée en 1993, Nvidia est également un acteur majeur dans les domaines de l'intelligence artificielle et des superordinateurs.",
+    "Objectif_du_poste": "Développer des solutions de calcul haute performance en utilisant les cartes graphiques Nvidia."
+  },
+  {
+    "nom": "Spotify",
+    "ville": "Stockholm",
+    "secteur": "Musique",
+    "Description": "Développement de la plateforme de streaming Spotify",
+    "Intitule_de_la_formation": "Développeur Backend",
+    "chemin_d_acces_logo": "image/logo-Ankama.png",
+    "Competence": ["Java", "Python", "Node.js", "Développement Backend"],
+    "A_propos_de_l_entreprise": "Spotify est une plateforme de streaming musical suédoise, lancée en 2008. Elle permet aux utilisateurs d'écouter de la musique en streaming à partir d'un vaste catalogue de chansons.",
+    "Objectif_du_poste": "Développer et maintenir des services backend pour la plateforme de streaming."
+  },
+  {
+    "nom": "Slack",
+    "ville": "San Francisco",
+    "secteur": "Communication",
+    "Description": "Création d'une plateforme de collaboration d'équipe",
+    "Intitule_de_la_formation": "Développeur Slack",
+    "chemin_d_acces_logo": "image/logo-Ankama.png",
+    "Competence": ["JavaScript", "Node.js", "React", "Développement Backend"],
+    "A_propos_de_l_entreprise": "Slack est une plateforme de communication et de collaboration d'entreprise, permettant aux équipes de travailler ensemble en temps réel. L'entreprise a été fondée en 2013 et a révolutionné la façon dont les entreprises communiquent.",
+    "Objectif_du_poste": "Développer des fonctionnalités et des intégrations pour améliorer la collaboration sur Slack."
+  }
+]
