@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+
+    <div class="container-a_propops">
+        <img src="{{ asset('flou3.png') }}" class="image-a_propops">
+        <h1 class="job-title-a_propos">À propos de nous</h1>
+    </div>
+    <div class="bloc-violet">
+        <div>
+            <img src="{{ asset('logo2.png') }}" alt="Logo circulaire">
+        </div>
+        <h2>Une question ?</h2>
+        <h3>Une question concernant tout type de problème ou de service ? Contactez nous au <B><u>03 69 69 69 69</u></B></h3>
+        <h2>À propos de nous</h2>
+        <h3>Maecenas semper nisi eu sodales dignissim. Pellentesque ullamcorper pellentesque tellus vitae elementum. Nam mauris dui, iaculis a purus eget, posuere hendrerit justo. Maecenas eu ligula eu torticitur et ipsum id, commodo facilisis eros. Aliquam quis lorem pellentesque mauris blandit c</h3>
+    </div>
+    <div class="form-container">
+        <h2 class="form-title">Formulaire de contact</h2>
+        <p class="form-description">Nos équipes sont à votre écoute pour répondre efficacement à votre besoin.</p>
+        <form action="#" method="post">
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Nom" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Prénom" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="E-mail" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="form-control" placeholder="Téléphone">
+                </div>
+            </div>
+            <div class="form-group full-width">
+                <textarea class="form-control" placeholder="Message" required></textarea>
+            </div>
+            <div class="form-submit">
+                <button type="submit" class="btn-submit">Envoyer</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
