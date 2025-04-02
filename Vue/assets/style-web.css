@@ -11,6 +11,10 @@ body {
   padding: 0;
 }
 
+.banner {
+  text-align: center;
+}
+
 .bg-pink {
   background-color: #F4F7FF;
 }
@@ -498,7 +502,9 @@ body.cmpt {
   flex-direction: column;
   min-height: 100%;
   margin : 0;
+  flex : 1;
 }
+
 
 main.cmpt {
   background-image: url("backgroundcompte.png");
@@ -986,3 +992,252 @@ body.connexion-page {
   box-sizing: border-box;
 }
 
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+/*style de la page info compte*/
+ .account-container {
+   max-width: 900px;
+   margin: 40px auto;
+   display: flex;
+   gap: 30px;
+ }
+
+.account-avatar {
+  width: 200px;
+  text-align: center;
+}
+
+.account-avatar img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #7B8EEE;
+}
+
+.account-details {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(97, 91, 155, 0.1);
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-row p {
+  flex: 1;
+  margin: 0;
+  color: #5D5897;
+  font-size: 16px;
+}
+
+.detail-row button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #7B8EEE;
+  transition: transform 0.2s;
+}
+
+.detail-row button:hover {
+  transform: scale(1.2);
+  color: #5A1763;
+}
+
+@media (max-width: 768px) {
+  .account-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .account-avatar {
+    margin: 0 auto;
+  }
+}
+
+/* pour la page informations compte*/
+.compte-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.compte-main {
+  flex: 1;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f5;
+}
+
+/* Ajouts CSS */
+.compte-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.compte-main {
+  flex: 1;
+  padding: 40px 0;
+  background-color: #F4F7FF;
+  display: flex;
+  justify-content: center;
+}
+
+.account-container {
+  width: 90%;
+  display: flex;
+  gap: 50px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.account-avatar {
+  width: 30%;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.account-avatar img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #7B8EEE;
+}
+
+.account-details {
+  padding: 40px 20px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-row p {
+  margin: 0;
+  font-size: 18px;
+  color: #5D5897;
+}
+
+.edit-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #7B8EEE;
+  cursor: pointer;
+}
+
+.full-height-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.account-content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #F4F7FF;
+  padding: 2rem 0;
+}
+
+/* Conteneur principal */
+.account-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 3rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 2.5rem;
+}
+
+/* Partie avatar */
+.account-avatar {
+  flex: 0 0 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.account-avatar img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #7B8EEE;
+  margin-bottom: 1.5rem;
+}
+
+/* Détails du compte */
+.account-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #5D5897;
+}
+
+.edit-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #7B8EEE;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .account-container {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .account-avatar {
+    flex: 0 0 auto;
+    margin-bottom: 1.5rem;
+  }
+}

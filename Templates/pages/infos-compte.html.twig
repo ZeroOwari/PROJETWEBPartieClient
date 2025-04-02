@@ -1,18 +1,36 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-    <div style="max-width: 500px; margin: 0 auto; padding: 20px;">
-        <h1>MON COMPTE</h1>
+    {% if not user %}
+        <script>window.location.href = "?page=connexion-etu";</script>
+    {% else %}
+        <div style="display: flex; flex-direction: column; min-height: calc(100vh - 60px - 60px);"> {# 60px pour header et footer #}
+            <section class="banner">
+                <h1>Informations du compte</h1>
+            </section>
 
-        {% if user %}
-            <div style="background: #e8f5e9; padding: 20px; margin-top: 20px;">
-                <p>Bonjour <strong>{{ user.prenom }} {{ user.nom }}</strong> !</p>
-                <p>Email: {{ user.email }}</p>
-                <p>Âge: {{ user.age }} ans</p>
-                <p>Formation: {{ user.formation }}</p>
-            </div>
-        {% else %}
-            <p style="color:red">ERREUR : Veuillez vous <a href="?page=connexion-etu">connecter</a></p>
-        {% endif %}
-    </div>
+            <main style="flex: 1; display: flex; justify-content: center; align-items: center; background-color: #F4F7FF; padding: 20px 0;">
+                <div class="account-container" style="max-width: 1000px; width: 90%;">
+                    <div class="account-avatar">
+                        <img src="{{ asset('Avatar.png') }}" alt="Avatar">
+                        <h3>{{ user.prenom }} {{ user.nom }}</h3>
+                    </div>
+
+                    <div class="account-details">
+                        {% for field in [
+                            {label: 'Mail', value: user.email},
+                            {label: 'Tél', value: user.telephone|default('Non renseigné')},
+                            {label: 'Mot de passe', value: '**********'},
+                            {label: 'Date de naissance', value: user.date_naissance|default('Non renseignée')}
+                        ] %}
+                            <div class="detail-row">
+                                <p><strong>{{ field.label }} :</strong> {{ field.value }}</p>
+                                <button class="edit-btn">✎</button>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </main>
+        </div>
+    {% endif %}
 {% endblock %}

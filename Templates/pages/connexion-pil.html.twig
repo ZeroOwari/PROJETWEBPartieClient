@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+
+
+{% block content %}
+    {% if user %}
+    <script>window.location.href = "?page=accueil";</script>
+    {% else %}
+
+<section class="banner">
+    <h1>Informations du compte</h1>
+</section>
+
+<main>
+    <div class="account-container">
+        <div class="account-avatar">
+            <img src="assets/Avatar.png" alt="Avatar">
+            <h3>John DOE</h3>
+        </div>
+
+        <div class="account-details">
+            <div class="detail-row">
+                <p><strong>Mail :</strong> john.doe@mail.com</p>
+                <button>✎</button>
+            </div>
+
+            <div class="detail-row">
+                <p><strong>Tél :</strong> +330771820070</p>
+                <button>✎</button>
+            </div>
+
+            <div class="detail-row">
+                <p><strong>Localisation :</strong> Montcuq(46), FR</p>
+                <button>✎</button>
+            </div>
+
+            <div class="detail-row">
+                <p><strong>Mot de passe :</strong> **********</p>
+                <button>✎</button>
+            </div>
+
+            <div class="detail-row">
+                <p><strong>Date de naissance :</strong> 01/01/2000</p>
+                <button>✎</button>
+            </div>
+        </div>
+    </div>
+</main>
