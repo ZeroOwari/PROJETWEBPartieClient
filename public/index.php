@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
 }
 
 // Pages autorisées
-$publicPages = ['accueil', 'connexion-etu', 'a-propos', 'connexion-pil', 'connexion-adm'];
+$publicPages = ['accueil', 'connexion-etu', 'a-propos', 'connexion-pil', 'connexion-adm', 'mentions'];
 $privatePages = ['infos-compte', 'recherche', 'espace-tuteur'];
 $allPages = array_merge($publicPages, $privatePages, ['404']);
 
