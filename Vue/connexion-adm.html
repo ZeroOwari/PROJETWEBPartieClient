@@ -14,45 +14,46 @@
     <div class="logo">
       <img src="assets/logo.png" alt="Web4ALL Logo">
     </div>
+
     <div class="services-dropdown">
       <button class="hamburger-menu">
         <span class="hamburger-icon"></span>
         Services
       </button>
       <div class="dropdown-content">
-        <a href="choix-profil.html">Accueil</a>
-        <a href="a-propos.html">À propos de nous</a>
-        <a href="avis.html">Avis</a>
-        <a href="recherche.html">Recherche</a>
-        <a href="espace-tuteur.html">Espace Tuteur</a>
-        <a href="mon-compte-etudiant.html">Mon compte Étudiant</a>
-        <a href="mon-compte-tuteur.html">Mon compte Tuteur</a>
+        <a href="accueil.html"><i class="fas fa-home"></i> Accueil</a>
+        <a href="a-propos.html"><i class="fas fa-info-circle"></i> À propos de nous</a>
+        <a href="avis.html"><i class="fas fa-star"></i> Avis</a>
+        <a href="recherche.html"><i class="fas fa-search"></i> Recherche</a>
+        <a href="espace-tuteur.html"><i class="fas fa-chalkboard-teacher"></i> Espace Tuteur</a>
+        <a href="mon-compte-etudiant.html"><i class="fas fa-user-graduate"></i> Mon compte Étudiant</a>
+        <a href="mon-compte-tuteur.html"><i class="fas fa-user-tie"></i> Mon compte Tuteur</a>
       </div>
     </div>
-
+    <h1> P.A.I.J </h1>
     <div class="right-menu">
-      <a href="connexion.html" class="nav-button">Connexion</a>
-      <a href="espace-recruteur.html" class="nav-button">Espace pilote</a>
+      <a href="connexion.html" class="nav-button active"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+      <a href="espace-recruteur.html" class="nav-button"><i class="fas fa-briefcase"></i> Espace recruteur</a>
     </div>
   </nav>
   <div class="container container-pink">
-    <h1 class="job-title job-title-purple">Espace admin</h1>
+    <h1 class="job-title job-title-purple">Espace Admin</h1>
   </div>
 </header>
 <img src="assets/flou.png" class="image">
 <div class="bloc bloc-pink">
   <h2 class="titre-connexion titre-connexion-purple">Se connecter</h2>
-  <form class="formulaire-connexion">
+  <form class="formulaire-connexion" action="ConnexionAdmin.php" method="POST">
     <div class="champ-formulaire champ-formulaire-purple champ-formulaire-connexion">
       <label for="email">E-mail</label>
-      <input type="email" id="email" placeholder="Entrez votre adresse email">
+      <input type="email" id="email" name = "email" placeholder="Entrez votre adresse email">
     </div>
     <div class="champ-formulaire champ-formulaire-purple champ-formulaire-connexion">
       <label for="password">Mot de passe</label>
       <div style="position: relative;">
-        <input type="password" id="password" placeholder="Tapez votre mode passe">
-        <button type="button" class="toggle-password" onclick="togglePassword('password')">👁</button>
-      </div>
+      <input type="password" id="password" name="password" placeholder="Tapez votre mode passe">
+      <button type="button" class="toggle-password" onclick="togglePassword('password')">👁</button>
+    </div>
     </div>
     <div class="option-rester-connecte option-rester-connecte-purple">
       <input type="checkbox" id="rester-connecte">

@@ -43,15 +43,15 @@
 <img src="assets/flou.png" class="image">
 <div class="bloc bloc-pink">
   <h2 class="titre-connexion titre-connexion-purple">Se connecter</h2>
-  <form class="formulaire-connexion">
+  <form class="formulaire-connexion" action="ConnexionPilote.php" method="POST">
     <div class="champ-formulaire champ-formulaire-purple champ-formulaire-connexion">
       <label for="email">E-mail</label>
-      <input type="email" id="email" placeholder="Entrez votre adresse email">
+      <input type="email" id="email" name = "email" placeholder="Entrez votre adresse email">
     </div>
     <div class="champ-formulaire champ-formulaire-purple champ-formulaire-connexion">
       <label for="password">Mot de passe</label>
       <div style="position: relative;">
-      <input type="password" id="password" placeholder="Tapez votre mode passe">
+      <input type="password" id="password" name="password" placeholder="Tapez votre mode passe">
       <button type="button" class="toggle-password" onclick="togglePassword('password')">👁</button>
     </div>
     </div>
