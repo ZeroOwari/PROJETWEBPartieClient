@@ -384,12 +384,12 @@ body {
 }
 
 .form-container {
-  width: 50%;
+  width: 50%; /* Largeur relative */
   height: 800px;
   background-color: white;
   padding: 40px;
   position: absolute;
-  right: 5%;
+  right: 5%; /* Déplacé plus à droite */
   top: 280px;
   box-sizing: border-box;
 }
@@ -515,31 +515,39 @@ main.cmpt {
 }
 
 .info-container.cmpt {
-  background-color: #F4F7FF;
-  padding: 40px;
+  background-color: #F4F7FF;    /*rgba(255, 255, 255, 0.8)*/
+  padding: 40px; /* Augmentation du padding */
   border-radius: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  width: 90%;
-  max-width: 1000px;
+  width: 90%; /* Augmentation de la largeur de 80% à 90% */
+  max-width: 1000px; /* Augmentation de la largeur maximale de 800px à 1000px */
 }
 
 .left-card.cmpt {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 25%;
-  margin-right: 50px;
+  width: 25%; /* Réduction légère pour donner plus d'espace à droite */
+  margin-right: 50px; /* Augmentation de la marge */
 }
 
 .right-card.cmpt {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 75%;
-  color: #5D5897;
+  width: 75%; /* Augmentation de la largeur */
+  color: #5D5897; /* Couleur du texte */
+}
+
+.avatar.cmpt {
+  /*width: 200px;
+  height: 200px;
+  background-color: #ddd;
+  border-radius: 70%;
+  margin-bottom: 20px;*/
 }
 
 .user-info p.cmpt {
@@ -552,22 +560,22 @@ main.cmpt {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Plus d'espace entre les lignes */
   width: 100%;
 }
 
 .row p.cmpt {
-  margin: 0 20px 0 0;
+  margin: 0 20px 0 0; /* Plus d'espace entre les textes */
   text-align: center;
   background: #F4F7FF;
-  font-size: 16px;
-  border: 2px solid #7B8EEE;
-  padding: 10px;
+  font-size: 16px; /* Taille de police légèrement plus grande */
+  border: 2px solid #7B8EEE; /* Épaisseur, style et couleur de la bordure */
+  padding: 10px; /* Ajoute un espace intérieur entre le texte et la bordure */
 }
 
 .row button.cmpt {
   margin-left: auto;
-  padding: 8px 12px;
+  padding: 8px 12px; /* Boutons légèrement plus grands */
 }
 
 body.accueil {
@@ -608,7 +616,7 @@ nav ul li a.accueil {
 
 .login-section.accueil {
   margin: 40px auto;
-  flex: 1;
+  flex: 1; /* Ajout de flex: 1; */
 }
 
 .login-section h2.accueil {
@@ -652,11 +660,11 @@ button:hover.accueil {
 }
 
 footer {
-  background-color: #333;
+  background-color: #333; /* Fond gris foncé/noir */
   color: white;
   padding: 20px 0;
   width: 100%;
-  margin-top: auto;
+  margin-top: auto; /* Pousse le footer vers le bas */
 }
 
 .footer-content {
@@ -681,6 +689,8 @@ footer {
   color: white;
 }
 
+
+/* Styles spécifiques pour la page de connexion  en fait connexion c'est accueil*/
 body.connexion-page {
   background-color: #f0f0f5;
   text-align: center;
@@ -830,6 +840,7 @@ body.connexion-page {
   z-index: 2;
 }
 
+/* Styles spécifiques pour la page d'informations de compte */
 .compte-container {
   max-width: 800px;
   margin: 40px auto;
@@ -975,180 +986,3 @@ body.connexion-page {
   box-sizing: border-box;
 }
 
-.containerpilote {
-  display: flex;
-  padding: 20px;
-  min-height: 50vh;
-  background-color: #f9f9f9;
-  justify-content: center;
-  max-width: 1400px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
-
-.sidebar {
-  width: 20%;
-  min-width: 250px;
-  background: #f0f0ff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  flex-shrink: 0;
-}
-
-.tuteur {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.tuteur img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 2px solid #7B8EEE;
-  object-fit: cover;
-}
-
-.tuteur h2 {
-  font-size: 18px;
-  color: #333;
-  margin-top: 10px;
-}
-
-.promo-item {
-  margin-bottom: 10px;
-}
-
-.toggle-btn {
-  width: 100%;
-  padding: 10px;
-  background: #7B8EEE;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: left;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.toggle-btn span {
-  font-weight: bold;
-}
-
-.toggle-btn:hover {
-  background: #5A1763;
-}
-
-.eleve-list {
-  list-style: none;
-  padding: 0;
-  margin: 5px 0;
-  display: none;
-}
-
-.eleve-list.visible {
-  display: block;
-}
-
-.eleve-list li {
-  background: #e3e3ff;
-  padding: 8px;
-  margin-top: 3px;
-  border-radius: 4px;
-}
-
-.wrapper {
-  flex-grow: 1;
-  max-width: 800px;
-  max-height: 650px;
-  margin-left: 15%;
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-canvas {
-  width: 100%;
-  height: auto;
-  max-height: 400px;
-  margin-top: 10px;
-  object-fit: contain;
-}
-
-button#filterBtn {
-  margin-top: 50px;
-  padding: 20px 30px;
-  border: none;
-  background-color: #7B8EEE;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 25px;
-}
-
-button#filterBtn:hover {
-  background-color: #5A1763;
-}
-
-.filters {
-  display: none;
-  margin-top: 10px;
-}
-
-.filters button {
-  background-color: #7B8EEE;
-  color: white;
-  padding: 8px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 5px;
-}
-
-.filters button:hover {
-  background-color: #5A1763;
-}
-
-@media (max-width: 1024px) {
-  .containerpilote {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .sidebar {
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 20px;
-    min-width: auto;
-  }
-
-  .wrapper {
-    width: 100%;
-    max-width: 600px;
-    margin-left: 0;
-    margin-top: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .containerpilote {
-    padding: 10px;
-  }
-
-  .sidebar, .wrapper {
-    padding: 15px;
-  }
-
-  button#filterBtn {
-    padding: 15px 20px;
-    font-size: 20px;
-  }
-}

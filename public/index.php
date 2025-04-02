@@ -7,7 +7,7 @@ $twig = new \Twig\Environment($loader, ['cache' => false]);
 
 // Fonction asset
 $twig->addFunction(new \Twig\TwigFunction('asset', function ($path) {
-    $vueAssets = ['style-web.css', 'logo.png', 'backgroundcompte.png'];
+    $vueAssets = ['style-web.css', 'logo.png', 'backgroundcompte.png', 'Avatar.png'];
     if (in_array(basename($path), $vueAssets)) {
         return '/Vue/assets/' . ltrim($path, '/');
     }
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
 }
 
 // Pages autorisées
-$publicPages = ['accueil', 'connexion-etu', 'a-propos'];
+$publicPages = ['accueil', 'connexion-etu', 'a-propos', 'connexion-pil'];
 $privatePages = ['infos-compte', 'recherche', 'espace-tuteur'];
 $allPages = array_merge($publicPages, $privatePages, ['404']);
 

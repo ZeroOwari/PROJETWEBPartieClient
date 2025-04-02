@@ -16,21 +16,35 @@
             <p class="subtitle">Choisissez votre profil pour accéder à votre compte</p>
 
             <div class="cards">
-                {% for type, icon in {
-                    'student': 'user-graduate',
-                    'recruiter': 'briefcase',
-                    'tutor': 'chalkboard-teacher'
-                } %}
-                    <div class="card {{ type }}">
-                        <div class="card-icon">
-                            <i class="fas fa-{{ icon }}"></i>
-                        </div>
-                        <h3>{{ type|capitalize }}</h3>
-                        <a href="?page=connexion-{{ type == 'student' ? 'etu' : type }}" class="btn-login">
-                            Se connecter
-                        </a>
+                <div class="card student">
+                    <div class="card-icon">
+                        <i class="fas fa-user-graduate"></i>
                     </div>
-                {% endfor %}
+                    <h3>Étudiant</h3>
+                    <a href="?page=connexion-etu" class="btn-login">
+                        Se connecter
+                    </a>
+                </div>
+
+                <div class="card tutor">
+                    <div class="card-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Tuteur</h3>
+                    <a href="?page=connexion-pil" class="btn-login">
+                        Se connecter
+                    </a>
+                </div>
+
+                <div class="card recruiter">
+                    <div class="card-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Recruteur</h3>
+                    <a href="?page=connexion-rec" class="btn-login">
+                        Se connecter
+                    </a>
+                </div>
             </div>
         </div>
     </section>
