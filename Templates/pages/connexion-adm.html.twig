@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <div class="body bg-pink">
+        <div class="container container-pink">
+            <h1 class="job-title job-title-purple">Espace Admin</h1>
+        </div>
+
+        <img src="{{ asset('flou.png') }}" class="image">
+
+        <div class="bloc bloc-pink">
+            <h2 class="titre-connexion titre-connexion-purple">Se connecter</h2>
+
+            {% if error %}
+                <div class="alert alert-danger" style="color:red; margin-bottom:20px;">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            <form class="formulaire-connexion" action="?page=connexion-admin" method="POST">
+                <input type="hidden" name="login" value="1">
+
+                <div class="champ-formulaire champ-formulaire-purple champ-formulaire-connexion">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Entrez votre adresse email" required>
+                </div>
+
+                <div class="champ-formulaire champ-formulaire-purple champ-formulaire-connexion">
+                    <label for="password">Mot de passe</label>
+                    <div style="position: relative;">
+                        <input type="password" id="password" name="password" placeholder="Tapez votre mot de passe" required>
+                        <button type="button" class="toggle-password" onclick="togglePassword('password')">👁</button>
+                    </div>
+                </div>
+
+                <div class="option-rester-connecte option-rester-connecte-purple">
+                    <input type="checkbox" id="rester-connecte" name="remember">
+                    <label for="rester-connecte">Rester connecté</label>
+                </div>
+
+                <button type="submit" id="login-button" class="bouton-connexion bouton-connexion-purple">Se connecter</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        function togglePassword(id) {
+            const input = document.getElementById(id);
+            input.type = input.type === 'password' ? 'text' : 'password';
+        }
+    </script>
+{% endblock %}
