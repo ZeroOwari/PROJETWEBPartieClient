@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web4ALL Navigation</title>
+  <link rel="stylesheet" href="assets/style-web.css">
+  <script src="../controler/connexion.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="body bg-pink">
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Web4ALL Logo">
+    </div>
+
+    <div class="services-dropdown">
+      <button class="hamburger-menu">
+        <span class="hamburger-icon"></span>
+        Services
+      </button>
+      <div class="dropdown-content">
+        <a href="accueil.html"><i class="fas fa-home"></i> Accueil</a>
+        <a href="a-propos.html"><i class="fas fa-info-circle"></i> À propos de nous</a>
+        <a href="avis.html"><i class="fas fa-star"></i> Avis</a>
+        <a href="recherche.html"><i class="fas fa-search"></i> Recherche</a>
+        <a href="espace-tuteur.html"><i class="fas fa-chalkboard-teacher"></i> Espace Tuteur</a>
+        <a href="mon-compte-etudiant.html"><i class="fas fa-user-graduate"></i> Mon compte Étudiant</a>
+        <a href="mon-compte-tuteur.html"><i class="fas fa-user-tie"></i> Mon compte Tuteur</a>
+      </div>
+    </div>
+    <h1> P.A.I.J </h1>
+    <div class="right-menu">
+      <a href="connexion.html" class="nav-button active"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+      <a href="espace-recruteur.html" class="nav-button"><i class="fas fa-briefcase"></i> Espace recruteur</a>
+    </div>
+  </nav>
+</header>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire d'avis</title>
+  <style>
+    :root {
+      --couleur-primaire: #5A1763;
+      --couleur-secondaire: #7B8EEE;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .titre-section {
+      color: var(--couleur-primaire);
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .formulaire-avis {
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .groupe-formulaire {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: var(--couleur-primaire);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    .evaluation {
+      margin-bottom: 20px;
+    }
+
+    .etoiles {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+    }
+
+    .etoiles input {
+      display: none;
+    }
+
+    .etoiles label {
+      cursor: pointer;
+      width: 30px;
+      font-size: 30px;
+      color: #ddd;
+      margin-right: 5px;
+    }
+
+    .etoiles label:before {
+      content: '★';
+    }
+
+    .etoiles input:checked ~ label {
+      color: var(--couleur-secondaire);
+    }
+
+    .etoiles label:hover,
+    .etoiles label:hover ~ label {
+      color: var(--couleur-secondaire);
+    }
+
+    .bouton-soumettre {
+      background-color: var(--couleur-primaire);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .bouton-soumettre:hover {
+      background-color: var(--couleur-secondaire);
+    }
+
+    /* Ajout d'une ligne décorative avec les deux couleurs */
+    .separateur {
+      height: 4px;
+      background: linear-gradient(to right, var(--couleur-primaire), var(--couleur-secondaire));
+      margin: 30px 0;
+      border-radius: 2px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px 15px;
+      }
+
+      .formulaire-avis {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Votre header existant irait ici -->
+
+<div class="container">
+  <h1 class="titre-section">Votre avis nous intéresse</h1>
+
+  <div class="formulaire-avis">
+    <div class="separateur"></div>
+
+    <form id="form-avis" action="#" method="post">
+      <div class="groupe-formulaire">
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" required>
+      </div>
+
+      <div class="groupe-formulaire">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="groupe-formulaire">
+        <label for="sujet">Sujet</label>
+        <input type="text" id="sujet" name="sujet" required>
+      </div>
+
+      <div class="evaluation">
+        <label>Votre satisfaction</label>
+        <div class="etoiles">
+          <input type="radio" id="etoile5" name="note" value="5">
+          <label for="etoile5"></label>
+          <input type="radio" id="etoile4" name="note" value="4">
+          <label for="etoile4"></label>
+          <input type="radio" id="etoile3" name="note" value="3">
+          <label for="etoile3"></label>
+          <input type="radio" id="etoile2" name="note" value="2">
+          <label for="etoile2"></label>
+          <input type="radio" id="etoile1" name="note" value="1">
+          <label for="etoile1"></label>
+        </div>
+      </div>
+
+      <div class="groupe-formulaire">
+        <label for="commentaire">Votre avis</label>
+        <textarea id="commentaire" name="commentaire" required></textarea>
+      </div>
+
+      <button type="submit" class="bouton-soumettre">Envoyer</button>
+    </form>
+
+    <div class="separateur"></div>
+  </div>
+</div>
+
+<!-- Votre footer existant irait ici -->
+</body>
+</html>
+</body>
+</html>
